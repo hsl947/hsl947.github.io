@@ -1,0 +1,104 @@
+<html>
+    <head>
+        <title>3D动画翻书</title>
+        <meta charset="utf-8">
+        <meta name="author" content="洪少利">
+        <style>
+            *{
+                box-sizing: border-box
+            }
+            body{
+                background-color: #333;
+                position: relative;
+                -moz-user-select: none;
+            }
+            main{
+                width: 300px;
+                height: 400px;
+                margin: 200px auto 0 auto; 
+                perspective: 700px;
+                opacity: 0.8;
+                perspective-origin: 30% 80%;
+            }
+            section{
+                width: 100%;
+                height: 100%;
+                transform-origin:0 0 0;
+                position: absolute;
+                top: 0;
+                transition: transform 4s;
+                
+            }
+            section:nth-child(1){
+                background-color: yellow;
+
+                transform: rotateY(-2deg) scaleX(1.06);
+            }
+            section:nth-child(2){
+                background-color: red;
+
+                transform: rotateY(-17deg);
+            }
+            section:nth-child(3){
+                background-color: blue;
+
+                transform: rotateY(-32deg);
+            }
+            section:nth-child(4){
+                background-color: green;
+
+                transform: rotateY(-42deg);
+            }
+            section:nth-child(5){
+                background-color: purple;
+
+                transform: rotateY(-57deg);
+            }
+            section i{
+                position: absolute;
+                right: 13px;
+                bottom: 10px;
+                font-size: 15px;
+                color: white;
+                opacity: 0.8;
+            }
+            section:nth-child(5)>h1{
+                position: absolute;
+                top: 20px;
+                left: 40px;
+                font-feature-settings: 30px;
+                font-weight: normal;
+                color: white;
+            }
+            section:nth-child(5)>span{
+                position: absolute;
+                bottom: 80px;
+                left: 20px;
+                font-size: 18px;
+            }
+            section:nth-child(5):active{
+                transform: rotateY(-147deg);
+            }
+        </style>
+    </head>
+    <body>
+        <main>
+            <section>
+                <i>4</i>
+            </section>
+            <section>
+                <i>3</i>
+            </section>
+            <section>
+                <i>2</i>
+            </section>
+            <section>
+                <i>1</i>
+            </section>
+            <section>
+                <h1>码农修成宝典</h1>
+                <span>xxxxx</span>
+            </section>
+        </main>
+    </body>
+</html>
