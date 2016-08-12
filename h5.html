@@ -1,10 +1,36 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <title>Document</title>
 </head>
+
 <body>
-    <a href="tel:15980763390">xxxx</a>
+    <a href="tel:8615980763390">xxxx</a>
+    <div id="demo"></div>
+    <a href="javascript:void(0)" onclick="getLocation()">试试看</a>
+    <script>
+        var x = document.getElementById('demo');
+
+        function getLocation() {
+            if (navigation.geolocation) {
+                navigation.geolocation.getCurrentPosition(showPosition, showErr);
+
+            } else {
+                x.innerHTML = '不支持地理位置'
+            }
+
+            function showPosition(position) {
+                x.innerHTML = 'Latitude' + position.coords.latitude +
+                    '<br/>Longitude' + position.coords.longitude;
+            }
+
+            function showErr(err) {
+                console.log(err);
+            }
+        }
+    </script>
 </body>
+
 </html>
