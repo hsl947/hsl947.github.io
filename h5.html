@@ -14,8 +14,8 @@
         var x = document.getElementById('demo');
 
         function getLocation() {
-            if (navigation.geolocation) {
-                navigation.geolocation.getCurrentPosition(showPosition, showErr);
+            if (navigator.geolocation) {
+                navigator.geolocation.getCurrentPosition(showPosition, showErr);
 
             } else {
                 x.innerHTML = '不支持地理位置'
