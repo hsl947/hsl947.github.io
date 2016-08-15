@@ -5,6 +5,9 @@
     text-align: center;
     font-size: 3rem;
 }
+#fp-nav.left{
+    left:1rem;
+}
 #fp-nav li{
     list-style: none; 
     margin: 2.5rem auto;
