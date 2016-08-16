@@ -1,34 +1,210 @@
+html,
+body {
+    padding: 0;
+    margin: 0;
+}
+
 .section,
 .fp-section,
 .fp-completely {
     color: white;
     text-align: center;
-    font-size: 3rem;
+    font-size: 33px;
 }
-#fp-nav li{
-    list-style: none; 
-    margin: 2.5rem auto;
+
+
+/*侧边导航栏*/
+
+#fp-nav.left {
+    left: 11px;
 }
-#fp-nav li a{
-    padding: 1rem;
+
+#fp-nav li {
+    list-style: none;
+    margin: 27px auto;
+}
+
+#fp-nav li a {
+    padding: 11px;
     background-origin: padding-box;
     background-color: white;
     opacity: 0.5;
     border: solid 1px white;
-    border-radius: 0.6rem;
+    border-radius: 6px;
     color: black;
     text-decoration: none;
 }
-#fp-nav li a:hover{
+
+#fp-nav li a:hover {
     background-origin: padding-box;
     background-color: white;
     opacity: 1;
     border: solid 1px white;
     color: black;
 }
-#fp-nav li .active{
+
+#fp-nav li .active {
     background-color: black;
     opacity: 0.5;
     border: solid 1px black;
     color: white;
+}
+
+
+/*第一屏*/
+
+#fullpage .section img {
+    border-radius: 50%;
+    width: 222px;
+}
+
+#fullpage .section ul {
+    text-align: left;
+    width: 484px;
+    margin: 66px auto 0;
+    list-style: none;
+    font-size: 25px;
+}
+
+#fullpage .section ul a {
+    color: white;
+}
+
+#fullpage .section ul span {
+    display: inline-block;
+    width: 88px;
+    text-align: right;
+}
+
+
+/*第二屏*/
+
+#block-workEXP {
+    height: auto;
+    width: 1000px;
+    margin: auto;
+    color: #e7e7e7;
+    padding: 66px 0
+}
+
+#block-workEXP .timebox {
+    width: 363px;
+}
+
+#block-workEXP .timebox li {
+    display: inline-block;
+    margin-top: 11px;
+    font-size: 33px;
+}
+
+#block-workEXP .time1 {
+    margin-left: 60px;
+}
+
+#block-workEXP .timeline {
+    height: 33px;
+    background: url(../images/timeline.png) no-repeat center;
+}
+
+#block-workEXP .workbox {
+    margin-left: 198px;
+}
+
+#block-workEXP .workbox li {
+    display: inline-block;
+    width: 330px;
+    vertical-align: top;
+}
+
+#block-workEXP .workbox .work-place {
+    font-size: 27px;
+    font-weight: bold
+}
+
+#block-workEXP .workbox .work-position {
+    font-size: 22px;
+}
+
+#block-workEXP .workbox .work-do {
+    margin-top: 11px;
+    font-size: 16px;
+}
+
+
+/*第三屏*/
+
+#block-skill {
+    height: auto;
+    width: 100%;
+    color: #FFFFFF;
+    padding-bottom: 160px;
+}
+
+#block-skill .skill-title {
+    width: 300px;
+    margin: 0 auto;
+    padding-top: 100px;
+    text-align: center;
+}
+
+#block-skill .skills {
+    height: auto;
+    width: auto;
+}
+
+#block-skill ul {
+    display: inline-block;
+    height: auto;
+    width: 210px;
+    margin: 80px 0 0 56px;
+    border: 2px solid #FFFFFF;
+    font-size: 20px;
+    font-family: "Microsoft YaHei light";
+    text-align: center;
+    vertical-align: top;
+    border-radius: 13px;
+    padding-left: 0;
+    overflow: hidden;
+}
+
+#block-skill li {
+    height: 36px;
+    line-height: 36px;
+    text-align: center;
+}
+
+#block-skill li:first-child {
+    background-color: #FFFFFF;
+    color: #333;
+}
+
+#block-skill li:hover {
+    background-color: #FFFFFF;
+    color: #333;
+    cursor: default;
+}
+
+
+/*第四屏*/
+#fullpage .section h2{
+    font-family: '微软雅黑';
+    font-size: 66px;
+    font-weight: 900;
+}
+#block-will .job{
+    padding-top: 33px;
+    font-size: 38px;
+    font-weight: bolder;
+}
+#block-will .position{
+    font-size: 26px;
+}
+#block-will .plus{
+    font-size: 24px;
+    color: lightgrey;
+}
+#block-will .takeMe{
+    font-size: 24px;
+    font-weight: 900;
+    color: greenyellow;
 }
