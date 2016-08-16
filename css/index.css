@@ -1,3 +1,5 @@
+/*create by Soulegh 16/07/2016*/
+
 html,
 body {
     padding: 0;
@@ -54,8 +56,15 @@ body {
 /*第一屏*/
 
 #fullpage .section img {
+    border: solid 5px white;
     border-radius: 50%;
     width: 222px;
+}
+
+#fullpage .section h2{
+    font-family: '微软雅黑';
+    font-size: 66px;
+    font-weight: 900;
 }
 
 #fullpage .section ul {
@@ -186,11 +195,31 @@ body {
 
 
 /*第四屏*/
-#fullpage .section h2{
-    font-family: '微软雅黑';
-    font-size: 66px;
-    font-weight: 900;
+#block-evaluation{
+    width: 1111px;
+    height: auto;
+    margin: auto;
+    background-color: white;
+    opacity: 0.4;
+    padding: 38px;
+    color: black;
+    border-bottom: solid 5px black;
+    box-shadow: 3px 1px 1px black;
+    overflow: hidden;
 }
+#block-evaluation h3{
+    color: grey;
+    border-bottom: solid 5px black;
+    padding: 8px;
+}
+#block-evaluation ul li{
+    width: 1000px;
+    line-height: 55px;
+    font-weight: 700;
+}
+
+
+/*第五屏*/
 #block-will .job{
     padding-top: 33px;
     font-size: 38px;
