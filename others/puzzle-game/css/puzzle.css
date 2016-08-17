@@ -6,16 +6,16 @@ html,body{
     -webkit-user-select: none;
 }
 main{
-    width: 300px;
-    height: 300px;
+    width: 800px;
+    height: 449px;
     margin: 60px auto;
 }
 .tips{
     text-align: center;
 }  
 #puzzBox{
-    width: 300px;
-    height: 300px;
+    width: 800px;
+    height: 449px;
     position: relative;
 }
 #puzzBox div{
