@@ -59,7 +59,11 @@ body {
     border: solid 5px white;
     border-radius: 50%;
     width: 222px;
+<<<<<<< HEAD
     animation: bounceIn 3s;
+=======
+    animation: bounceIn 2s;
+>>>>>>> origin/master
 }
 
 #fullpage .section h2{
