@@ -1,0 +1,93 @@
+/**
+* create by Souleigh 20/05/2016
+*/
+
+*{
+    box-sizing: border-box;
+}
+body{
+    margin: 0 auto;
+    width: 100%; 
+    background-color: #F5F5F5;
+    background-image: url(../images/appdownload.png);
+    background-repeat: no-repeat;
+    background-position: 50% 0;
+    text-align: center;
+}
+section{
+    position: fixed;
+    bottom: 250px;
+    left: calc(50% - 50% / 2);
+    width: 100%;
+}
+a,a:hover,a:focus,a:active{
+    text-decoration: none;
+    outline: none;
+    color: #FF6600;
+}
+section div div{
+    float: left;
+}
+section div{
+    width: 50%;
+    border: solid 1px #FF6600;
+    background-color: white;
+    overflow: hidden;
+}
+section>div{
+    border-radius: 50px;
+}
+section div div:nth-child(1){
+    border-top-left-radius: 50px;
+    border-bottom-left-radius: 50px;
+    display: flex;
+    justify-content: flex-end;
+}
+section div div:nth-child(2){
+    border-top-right-radius: 50px;
+    border-bottom-right-radius: 50px;
+    display: flex;
+    justify-content: flex-start;
+}
+section div span{
+    display: inline-block;
+    line-height: 500%;
+    width: 250px;
+    font-size: 16px;    
+}
+section div div:nth-child(1) span{
+    background-color: #FF6600;
+    color: white;
+}
+section div div:nth-child(2) span{
+    background-color: white;
+    color: #FF6600;
+}
+@media (max-width:800px){
+body{
+    background-size: 100vw;   
+}
+section{
+    bottom: 33vw;
+}
+section div{
+    height: 10vw;
+}
+section div div{
+    float: left;
+    height: 10vw;
+    background-clip: border-box;
+    overflow: hidden;
+}
+section div span{
+    line-height: 10vw;
+    /*width: 100%;  */
+    font-size: 3vw;
+    height: 100%;
+    flex-basis: 100%;
+    width: 25vw;
+}
+section{
+    font-size: 3vw;
+}
+}

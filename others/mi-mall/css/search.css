@@ -1,0 +1,79 @@
+
+/**
+* create by Souleigh 20/05/2016
+*/
+
+*{
+    box-sizing: border-box;
+}
+body{
+    margin: 0;
+    background-color: #F5F5F5;
+}
+a,a:hover,a:focus,a:active{
+    text-decoration: none;
+    outline: none;
+    color: black;
+}
+header{
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+    border-bottom: solid 1px lightgray;
+}
+header input{
+    display: inline-block;
+    flex-basis: 80%;
+    border: none;
+    border: solid 1px lightgrey;
+    font-size: 33px;
+    padding-left: 10px;
+}
+header span{
+    font-size: 38px;
+    opacity: 0.5;
+    padding-top: 10px;
+}
+section{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 30px;
+}
+section div{
+    font-size: 24px;
+    background-color: #E4E4E4;
+    padding: 20px;
+    margin: 10px;
+}
+.red{
+    background-color: #F5F0EE;
+    border: #FE8A6D solid 1px;
+}
+@media (max-width:730px){
+header{   
+    padding: 2vw;
+}
+header img{
+    width: 9vw;
+    height: 9vw;
+}
+header input{
+    flex-basis: 80%;
+    font-size: 3vw;
+    padding-left: 1vw;
+    height: 10vw;
+}
+header span{
+    font-size: 5vw;
+    padding-top: 2vw;
+}
+section{
+    padding: 4vw;
+}
+section div{
+    font-size: 3vw;
+    padding: 3vw;
+    margin: 1vw;
+}    
+}

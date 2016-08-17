@@ -1,0 +1,124 @@
+/**
+* create by Souleigh 20/05/2016
+*/
+
+body{
+    margin: 0;
+    background-color: #F5F5F5;
+    /*width: 100%;
+    height: 100%;*/
+    /*box-sizing: border-box;*/
+}
+a,a:hover,a:focus,a:active{
+    text-decoration: none;
+    outline: none;
+}
+.mainpanel{
+    background-color: white;
+    width: 400px;
+    margin: 100px auto;
+    left: calc(50% - 400px / 2);
+    text-align: center;
+    background-image: url(../images/erweima.png);
+    background-repeat: no-repeat;
+    background-position: 100% 0;
+    padding: 30px;
+}
+.mainpanel>div:nth-child(2){
+    font-size: 22px;
+    margin: 10px 0;
+}
+input{
+    width: 100%;
+    border: none;
+    border: solid 1px lightgrey;
+    margin: 10px 0;
+    line-height: 38px;
+    padding-left: 12px; 
+}
+.login{
+    width: 100%;
+    background-color: #F56A00;
+    color: white;
+    line-height: 48px;
+    margin: 20px 0 10px;
+}
+hr{
+    display: inline-block;
+    width: 30%;
+    vertical-align: middle;
+}
+.another{
+    display: flex;
+    justify-content: center;
+}
+.another div{
+    margin: 0 20px;
+}
+.another div:nth-child(1){
+    width: 32px;
+    height: 32px;
+    background-image: url(../images/qq.png);
+    background-size: 100%;   
+}
+.another div:nth-child(1):hover{
+    background-image: url(../images/qq-1.png);
+}
+.another div:nth-child(2){
+    width: 32px;
+    height: 32px;
+    background-image: url(../images/weibo.png);
+    background-size: 100%;   
+}
+.another div:nth-child(2):hover{
+    background-image: url(../images/weibo-1.png);
+}
+.another div:nth-child(3){
+    width: 32px;
+    height: 32px;
+    background-image: url(../images/zhifubao.png);
+    background-size: 100%;   
+}
+.another div:nth-child(3):hover{
+    background-image: url(../images/zhifubao-1.png);
+}
+.login a,.login a:hover,.login a:focus,.login a:active{
+    color: white;
+}
+.zhuce a,.zhuce a:hover,.zhuce a:focus,.zhuce a:active{
+    color: grey;
+}
+.zhuce{
+    margin: 20px 0 0;
+}
+.foot span{
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    background-image: url(../images/ghs.png);
+    background-size: 100%; 
+}
+.foot div div{
+    margin-bottom: 20px;
+    flex-basis: 100%;
+    width: 100%;
+}
+.foot{
+    width: 100%;
+}
+.footflex{
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+.foot div div:nth-child(2){
+    color: grey;
+}
+@media (min-width:840px){
+.mainpanel{
+    width: 854px;
+    padding: 80px 100px;
+    left: calc(50% - 854px / 2);
+}
+}

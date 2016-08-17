@@ -1,0 +1,32 @@
+html,body{
+    margin: 0;
+    padding: 0;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    -webkit-user-select: none;
+}
+main{
+    width: 300px;
+    height: 300px;
+    margin: 60px auto;
+}
+.tips{
+    text-align: center;
+}  
+#puzzBox{
+    width: 300px;
+    height: 300px;
+    position: relative;
+}
+#puzzBox div{
+    position: absolute;
+    border: solid 2px white;
+    background-image: url(../images/puzzle.jpg);
+    border-radius: 6px;
+    transition-property:all;
+    transition-duration:500ms;
+    transition-timing-function:ease-in-out;  
+}
+#puzzBox div:hover{
+    opacity: 0.8;
+}

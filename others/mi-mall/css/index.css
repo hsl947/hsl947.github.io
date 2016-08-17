@@ -1,0 +1,215 @@
+/**
+* create by Souleigh 20/05/2016
+*/
+
+*{
+    box-sizing: border-box;
+}
+body{
+    margin: 0;
+    width: 100%;
+    background-color: #F5F5F5;
+}
+a,a:hover,a:focus,a:active{
+    text-decoration: none;
+    outline: none;
+}
+.top{
+    position: relative;
+}
+.download img{
+    width: 100%;
+}
+.close{
+    display: inline-block;
+    width: 88px;
+    position: absolute;
+    right: 0;
+    top: calc(50% - 13px);
+    text-align: center;
+}
+.search{
+    width: 100%;
+    padding: 2rem 2rem 1rem 2rem;
+    background-color: white;
+}
+.search img{
+    margin-top: -1rem;
+    width: 8vw;
+}
+.search a{
+    text-decoration: none;
+}
+.search span{
+    color: #9C9C9C;
+    font-size: 5vw;
+}
+.border{
+    border: solid 1px lightgray;
+    height: 0.8rem;
+    border-top: none;
+    margin-top: 0.2rem;
+}
+.carousel-inner > .item > a > img, 
+.carousel-inner > .item > img{
+    width: 100%;
+    height: 360px;
+}
+.carousel-indicators li{
+    width: 1vw;
+    height: 1vw;
+}
+.carousel-indicators .active{
+    width: 1.5vw;
+    height: 1.5vw;
+}
+.recommend{
+    width: 100%;
+    text-align: center;
+}
+.reco{
+    display: flex;
+    justify-content: center;
+}
+.reco div{
+    margin: 1rem;
+    width: 348px;
+    padding: 0;
+}
+.reco div img{
+    width: 100%;
+}
+section{
+    width: 100%;
+    background-color: white;
+    padding: 2rem;
+    border-bottom: solid 1px lightgray;
+}
+section>a,section>a:hover{
+    text-decoration: none;
+    outline: none;
+}
+.pic{
+    position: relative;
+    float: left;
+}
+.pic>img{
+    display: inline-block;
+    width: 216px;
+}
+.pic span img{
+    display: inline-block;
+    width: 129px;
+    position: absolute;
+    left: 25px;
+    top: 35px;
+    opacity: 0.8;
+}
+.clear{
+    clear: both;
+}
+.introduce{
+    display: inline;
+}
+.introduce p:nth-child(1){
+    font-size: 22px;
+    color: black;
+}
+.introduce p:nth-child(2){
+    font-size: 20px;
+    color: grey;
+}
+.introduce p:nth-child(3){
+    font-size: 20px;
+    color: red;   
+}
+section a{
+    display: flex;
+    justify-content: flex-start;
+}
+footer{
+    position: fixed;
+    bottom: 0;   
+    background-color:  #FFFFFF;
+    width: 100%;
+    border-top: solid 1px lightgray;
+    padding: 10px 0 0 0;
+    font-size: 20px;
+}
+footer ul{
+    display: flex;
+    justify-content: space-around;
+    padding-left: 0;
+}
+footer ul a,footer ul a:hover{
+    text-decoration: none;
+    color: grey;
+}
+footer ul .active{
+    text-decoration: none;
+    color: #F56A00;
+}
+footer li{
+    list-style: none;
+    float: left; 
+    text-align: center;
+}
+footer ul a{
+    outline: 0;
+    text-decoration: none;
+}
+footer li img{
+    width: 40px;
+    height: 40px;
+}
+@media (max-width:730px){
+.close{
+    text-align: right;
+}    
+.close img{
+    width: 3vw;
+}    
+.search{
+    padding: 3vw 3vw 2vw; 
+}
+.reco div{
+    padding: 0;
+}    
+.carousel-inner > .item > a > img, 
+.carousel-inner > .item > img{
+    width: 100%;
+    height: auto;
+}
+section{
+    padding: 3vw;
+}
+.introduce p:nth-child(1){
+    font-size: 4vw;
+}
+.introduce p:nth-child(2){
+    font-size: 3vw;
+    color: grey;
+}
+.introduce p:nth-child(3){
+    font-size: 3vw;
+    color: red;
+}
+.pic>img{
+    display: block;
+    width: 30vw;
+}
+.pic span img{
+    display: block;
+    width: 18vw;
+    position: absolute;
+    left: 3vw;
+    top: 5vw;
+}
+footer{
+    font-size: 3vw;
+}
+footer li img{
+    width: 5vw;
+    height: 5vw;
+}
+}
