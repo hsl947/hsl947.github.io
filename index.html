@@ -146,14 +146,7 @@
     <script src="js/jquery/jquery-ui/jquery.ui.min.js"></script>
     <script src="js/jquery/full-page/jquery.fullpage.min.js"></script>
     <script>
-        $(document).ready(function(){
-            $("#fakeloader").fakeLoader({
-                    timeToHide: 3000,
-                    bgColor: "#1abc9c",
-                    spinner: "spinner6",
-                });
-            })
-         
+    
         $(function() {
             // jQuery fullPage插件配置
             $('#fullpage').fullpage({
@@ -166,6 +159,12 @@
                 'navigation': true,
                 'navigationPosition': 'left'
             })
+            
+            $("#fakeloader").fakeLoader({
+                timeToHide: 3000,
+                bgColor: "#1abc9c",
+                spinner: "spinner6",
+             });
         })
     </script>
 </body>
