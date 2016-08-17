@@ -1,0 +1,21 @@
+{
+  "name": "node-app",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "start": "node ./app"
+  },
+  "dependencies": {
+    "angular-sanitize": "^1.5.8",
+    "art-template": "^3.0.3",
+    "body-parser": "~1.15.1",
+    "cookie-parser": "~1.4.3",
+    "crypto": "0.0.3",
+    "express": "~4.13.4",
+    "formidable": "^1.0.17",
+    "moment": "^2.14.1",
+    "mongoose": "^4.5.5",
+    "multer": "^1.1.0",
+    "serve-favicon": "~2.3.0"
+  }
+}

@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <title>博客后台管理系统</title>
+    <meta name="keywords" content="Ace后台系统" />
+    <meta name="description" content="Ace后台系统" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- basic styles -->
+    <link href="/assets/css/bootstrap.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="/assets/css/font-awesome.min.css" />
+    <link rel="stylesheet" href="/stylesheets/style.css">
+    <!-- ace styles -->
+    <link rel="stylesheet" href="/assets/css/ace.min.css" />
+    <link rel="stylesheet" href="/assets/css/ace-rtl.min.css" />
+    <link rel="stylesheet" href="/assets/css/ace-skins.min.css" />
+    <script src="/assets/js/ace-extra.min.js"></script>
+
+</head>
+
+<body>
+
+    <div class="navbar navbar-default" id="navbar">
+        <script type="text/javascript">
+            try {
+                ace.settings.check('navbar', 'fixed')
+            } catch (e) {}
+        </script>
+
+        <div class="navbar-container" id="navbar-container">
+            <div class="navbar-header pull-left">
+                <a href="/admin/blogs/1" class="navbar-brand">
+                    <small>
+							<i class="icon-leaf"></i>
+							博客后台管理系统
+						</small>
+                </a>
+                <!-- /.brand -->
+            </div>
+            <!-- /.navbar-header -->
+
+            <div class="navbar-header pull-right" role="navigation">
+                <ul class="nav ace-nav">
+
+                    <li class="light-blue">
+                        <a data-toggle="dropdown" href="#" class="dropdown-toggle">
+                            <img class="nav-user-photo" src="{{avatar}}" alt="Jason's Photo">
+                            <span class="user-info">
+									<small>欢迎光临,</small>
+									{{userName}}
+								</span>
+
+                            <i class="icon-caret-down"></i>
+                        </a>
+
+                        <ul class="user-menu pull-right dropdown-menu dropdown-yellow dropdown-caret dropdown-close">
+
+                            <li>
+                                <a href="/admin/adminCenter">
+                                    <i class="icon-user"></i> 个人中心
+                                </a>
+                            </li>
+
+                            <li class="divider"></li>
+
+                            <li>
+                                <a href="javascript:void(0)" onclick="logOut()">
+                                    <i class="icon-off"></i> 退出
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+                <!-- /.ace-nav -->
+            </div>
+            <!-- /.navbar-header -->
+        </div>
+        <!-- /.container -->
+    </div>
+
+    <div class="main-container" id="main-container">
+        <script type="text/javascript">
+            try {
+                ace.settings.check('main-container', 'fixed')
+            } catch (e) {}
+        </script>
+
+        <div class="main-container-inner">
+            <a class="menu-toggler" id="menu-toggler" href="#">
+                <span class="menu-text"></span>
+            </a>
+
+            <div class="sidebar" id="sidebar">
+                <script type="text/javascript">
+                    try {
+                        ace.settings.check('sidebar', 'fixed')
+                    } catch (e) {}
+                </script>
+
+                <div class="sidebar-shortcuts" id="sidebar-shortcuts">
+                    <div class="sidebar-shortcuts-large" id="sidebar-shortcuts-large">
+                        <button class="btn btn-success">
+								<i class="icon-signal"></i>
+							</button>
+
+                        <button class="btn btn-info">
+								<i class="icon-pencil"></i>
+							</button>
+
+                        <button class="btn btn-warning">
+								<i class="icon-group"></i>
+							</button>
+
+                        <button class="btn btn-danger">
+								<i class="icon-cogs"></i>
+							</button>
+                    </div>
+
+                    <div class="sidebar-shortcuts-mini" id="sidebar-shortcuts-mini">
+                        <span class="btn btn-success"></span>
+
+                        <span class="btn btn-info"></span>
+
+                        <span class="btn btn-warning"></span>
+
+                        <span class="btn btn-danger"></span>
+                    </div>
+                </div>
+                <!-- #sidebar-shortcuts -->
+                <ul class="nav nav-list">
+                    <li class="active">
+                        <a href="/" class="dropdown-toggle">
+                            <i class="icon-dashboard"></i>
+                            <span class="menu-text"> 首页 </span>
+                        </a>
+                        <ul class="submenu" style="display: none;">
+                            <!--<li>
+								<a href="buttons.html">
+									<i class="icon-double-angle-right"></i> 分类设置
+								</a>
+							</li>-->
+
+                            <li>
+                                <a href="/admin/blogs/1">
+                                    <i class="icon-double-angle-right"></i> 文章管理
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+
+                    <li>
+                        <a href="/admin/cate/1">
+                            <i class="icon-list"></i>
+                            <span class="menu-text"> 分类详情 </span>
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="/admin/adminCenter">
+                            <i class="icon-desktop"></i>
+                            <span class="menu-text"> 个人中心 </span>
+                        </a>
+                    </li>
+
+
+                </ul>
+                <!-- /.nav-list -->
+                <div class="sidebar-collapse" id="sidebar-collapse">
+                    <i class="icon-double-angle-left" data-icon1="icon-double-angle-left" data-icon2="icon-double-angle-right"></i>
+                </div>
+
+                <script type="text/javascript">
+                    try {
+                        ace.settings.check('sidebar', 'collapsed')
+                    } catch (e) {}
+                </script>
+            </div>
+
+            <div class="main-content">
+                <div class="page-content">
+                    <div class="page-header">
+                        <h1>
+                            <i class="icon-home home-icon"></i>
+								<a href="http://localhost:3000">首页</a>
+                            <small>
+									<i class="icon-double-angle-right"></i>
+									{{title}}
+								</small>
+                        </h1>
+                    </div>
+                    <div class="ace-settings-container" id="ace-settings-container">
+                        <div class="btn btn-app btn-xs btn-warning ace-settings-btn" id="ace-settings-btn">
+                            <i class="icon-cog bigger-150"></i>
+                        </div>
+
+                        <div class="ace-settings-box" id="ace-settings-box">
+                            <div>
+                                <div class="pull-left">
+                                    <select id="skin-colorpicker" class="hide">
+									<option data-skin="default" value="#438EB9">#438EB9</option>
+									<option data-skin="skin-1" value="#222A2D">#222A2D</option>
+									<option data-skin="skin-2" value="#C6487E">#C6487E</option>
+									<option data-skin="skin-3" value="#D0D0D0">#D0D0D0</option>
+								</select>
+                                </div>
+                                <span>&nbsp; 选择皮肤</span>
+                            </div>
+
+                            <div>
+                                <input type="checkbox" class="ace ace-checkbox-2" id="ace-settings-navbar" />
+                                <label class="lbl" for="ace-settings-navbar"> 固定导航条</label>
+                            </div>
+
+                            <div>
+                                <input type="checkbox" class="ace ace-checkbox-2" id="ace-settings-sidebar" />
+                                <label class="lbl" for="ace-settings-sidebar"> 固定滑动条</label>
+                            </div>
+
+                            <div>
+                                <input type="checkbox" class="ace ace-checkbox-2" id="ace-settings-breadcrumbs" />
+                                <label class="lbl" for="ace-settings-breadcrumbs">固定面包屑</label>
+                            </div>
+
+                            <div>
+                                <input type="checkbox" class="ace ace-checkbox-2" id="ace-settings-rtl" />
+                                <label class="lbl" for="ace-settings-rtl">切换到左边</label>
+                            </div>
+
+                            <div>
+                                <input type="checkbox" class="ace ace-checkbox-2" id="ace-settings-add-container" />
+                                <label class="lbl" for="ace-settings-add-container">
+								切换窄屏
+								<b></b>
+							</label>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- /#ace-settings-container -->
+                </div>
+                <!-- /.main-container-inner -->
+                <a href="#" id="btn-scroll-up" class="btn-scroll-up btn btn-sm btn-inverse">
+                    <i class="icon-double-angle-up icon-only bigger-110"></i>
+                </a>
+            </div>
+            <!-- /.main-container -->
+        </div>
+    </div>
+    <div class="row">
+        <div class="" style="margin-top:66px;">
+            <!-- PAGE CONTENT BEGINS -->
+
+            <div class="container">
+                <h2 style="text-align:center">{{title}}</h2>
+                <form action="/admin/blogEdit/{{data.id}}" id="mainForm" method="post" class="form-horizontal">
+                    <div class="form-group">
+                        <label for="title" class="col-sm-2 control-label">标题</label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" id="title" name="title" value="{{data.title}}" placeholder="请输入标题">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="order_num" class="col-sm-2 control-label">排序号</label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" id="order_num" name="order_num" value="{{data.order_num}}" placeholder="请输入排序号">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <!--用于提交到服务器端的表单名称-->
+                        <input type="hidden" name="img" value="{{data.img}}" id="iAvatar">
+                        <input type="file" style="width:0px;height:0px" id="selectFile">
+                        <label class="col-sm-2 control-label" for="img">图片</label>
+                        <div class="col-sm-10">
+                            <img id="imgCtrl" src="{{data.img}}" class="thumbnail" style="cursor:pointer;width:100px;max-height:100px" onerror="this.src='/images/err.jpg'">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="type" class="col-sm-2 control-label">分类</label>
+                        <select name="type" class="col-sm-3" style="left: 11px;">
+                            {{each Cdata as item index}}
+                            <option value="{{item}}">{{item}}</option>
+                            {{/each}}
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="description" class="col-sm-2 control-label">来源</label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" id="description" name="description" value="{{data.description}}" placeholder="请输入来源">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="tags" class="col-sm-2 control-label">标签</label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" id="tags" name="tags" value="{{data.tags}}" placeholder="请输入标签">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="content" class="col-sm-2 control-label">内容</label>
+                        <div class="col-sm-10">
+                            <textarea name="content" class="form-control" id="editor" placeholder="请输入内容">{{#data.content}}</textarea>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-sm-10 col-sm-offset-2">
+                            <button type="submit" class="btn btn-primary btn-block">提交</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+
+            <script src="/assets/js/jquery-2.0.3.min.js"></script>
+            <script src="/libs/jquery/jquery.min.js"></script>
+            <script src="/assets/js/bootstrap.min.js"></script>
+            <script src="/assets/js/typeahead-bs2.min.js"></script>
+            <script src="/libs/template.js"></script>
+            <!-- ace scripts -->
+            <script src="/assets/js/ace-elements.min.js"></script>
+            <script src="/assets/js/ace.min.js"></script>
+            <script src="/libs/bootstrap-datepicker/js/bootstrap-datepicker.min.js"></script>
+            <script src="/libs/bootstrap-datepicker/locales/bootstrap-datepicker.zh-CN.min.js"></script>
+            <script src="/libs/jquery/jquery.html5uploader.min.js"></script>
+            <script src="/libs/jquery/jquery.validate.min.js"></script>
+            <script src="/libs/jquery/jquery.cookie.min.js"></script>
+            <script charset="utf-8" src="/libs/kindeditor/kindeditor.min.js"></script>
+            <script charset="utf-8" src="/libs/kindeditor/lang/zh-CN.js"></script>
+            <script>
+                var options = {
+                    uploadJson: '/common/kindeditor/uploadImg'
+                };
+
+                KindEditor.ready(function(K) {
+                    window.editor = K.create('#editor', options);
+                });
+
+                // 验证管理员是否登录
+                if (!!!($.cookie('userName'))) {
+                    window.location.href = '/login.html';
+                }
+
+                function logOut() {
+                    $.removeCookie('userName', {
+                        'path': '/'
+                    });
+                    window.location.reload();
+                }
+                $("#imgCtrl").click(function() {
+                    $("#selectFile").click()
+                });
+
+                ////html5Uploader 标准配置方法
+                $("#selectFile").html5Uploader({
+                    name: "Filedata",
+                    postUrl: "/common/file/uploadfile", ////图片上传的post提交地址
+                    onSuccess: function(msg) { /////上传成功后的回调函数
+                        //console.log(msg);
+                        try {
+                            var url = JSON.parse(msg.currentTarget.response).url;
+                            $("#imgCtrl").attr("src", url); ////指定img控件的src属性
+                            $("#iAvatar").val(url); /////服务器端接收时需要获取的标签
+                        } catch (e) {
+                            console.log(e);
+                        }
+                    }
+                });
+
+                $(function() {
+                    $("#mainForm").validate({
+                        rules: {
+                            title: {
+                                required: true,
+                                minlength: 2
+                            },
+                            description: {
+                                required: true,
+                            },
+                            tags: {
+                                required: true,
+                                minlength: 2
+                            }
+                        },
+                        messages: {
+                            title: {
+                                required: "标题不能为空",
+                                minlength: '标题最小长度必须为2'
+                            },
+                            description: {
+                                required: "标题不能为空",
+                            },
+                            tags: {
+                                required: "标签不能为空",
+                                minlength: '标签最小长度必须为2'
+                            }
+                        }
+                    })
+                })
+            </script>
+
+</body>
+
+</html>

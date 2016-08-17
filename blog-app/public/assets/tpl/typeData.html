@@ -1,0 +1,15 @@
+<nav-directive></nav-directive>
+
+<div class="cards ng-enter col-sm-8 col-sm-offset-2" style="animation: bounceIn 1s;">
+    <div class="" ng-repeat="item in blogData">
+        <a href="/#/view/{{item.id}}">
+            <img class="thumbnail" style="width: 88px;" ng-src="{{item.img}}" alt="">
+            <p>{{item.title}}</p>
+            <p style="color: grey;font-size: 12px;">{{item.tags}}</p>
+        </a>
+        <hr>
+    </div>
+    <div class="col-12" style="text-align:center">
+        <a href="javascript:void(0)" ng-show="showLoadMore" ng-click="loadMore()">加载更多</a>
+    </div>
+</div>

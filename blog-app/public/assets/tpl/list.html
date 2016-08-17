@@ -1,0 +1,13 @@
+<nav-directive></nav-directive>
+
+<div class="cards ng-enter" style="animation: bounceIn 1s;">
+        <div class="col-sm-6 col-md-4 col-lg-3" ng-repeat="item in blogData">
+            <div class="thumbnail">
+            <a href="/#/view/{{item.id}}">
+                <img class="thumbnail" style="width: 88px;" ng-src="{{item.img}}" alt="">
+                <p>{{item.title}}</p>
+                <p style="color: grey;font-size: 12px;">{{item.tags}}</p>
+            </a>
+            </div>
+    </div>
+</div>

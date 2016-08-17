@@ -1,0 +1,50 @@
+body {
+  padding: 0px;
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+}
+
+a {
+  color: #00B7FF;
+}
+
+*{
+  box-sizing: border-box;
+}
+
+.table>tbody>tr>td,
+.table>tbody>tr>th,
+.table>tfoot>tr>td,
+.table>tfoot>tr>th,
+.table>thead>tr>td,
+.table>thead>tr>th {
+  vertical-align: middle;
+}
+
+li {
+  cursor: pointer;
+}
+
+textarea {
+  resize: none;
+}
+
+#editor {
+  overflow: scroll;
+  max-height: 300px
+}
+
+table{
+  border-radius: 8px;
+}
+
+table td,
+th {
+  text-align: center;
+}
+
+td img {
+  margin: auto;
+}
+.error{
+  color: red;
+}
