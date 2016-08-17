@@ -14,7 +14,8 @@
 
 </head>
 
-<body right-click=''>   
+<body right-click=''>
+
     <!--附加导航栏-->
     <ul id="fp-nav" style="position: fixed;top: 38%;z-index: 100">
         <li><a href="#page1" class="active">基本信息</a></li>
@@ -23,9 +24,9 @@
         <li><a href="#page4">自我评价</a></li>
         <li><a href="#page5">求职意向</a></li>
     </ul>
+    <div id="fakeloader"></div>
     <!--页面主体-->
     <div id="fullpage">
-        <div id="fakeloader"></div>
         <!--第一屏-->
         <div class="section">
             <div id="block-brief">
@@ -149,7 +150,7 @@
             $("#fakeloader").fakeLoader({
                 timeToHide: 3000,
                 bgColor: "#1abc9c",
-                spinner: "spinner6"
+                spinner: "spinner6",
             });
             // jQuery fullPage插件配置
             $('#fullpage').fullpage({
