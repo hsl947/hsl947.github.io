@@ -11,12 +11,13 @@
     <link rel="stylesheet" href="js/jquery/full-page/jquery.fullpage.min.css">
     <link rel="stylesheet" href="css/animate.css">
     <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="css/fakeLoader.css">
 
 
 </head>
 
 <body right-click=''>
-
+    <div id="fakeloader"></div>
     <!--附加导航栏-->
     <ul id="fp-nav" style="position: fixed;top: 38%;z-index: 100">
         <li><a href="#page1" class="active">基本信息</a></li>
@@ -134,7 +135,7 @@
                 <p class="job">前端工程师</p>
                 <p class="position">工作地点：厦门/泉州</p>
                 <p class="plus">当然啦,如果offer足够慷慨,我说不定也可以异地看看哟</p>
-                <p class="takeMe">快到招我到碗里吧!</p>
+                <p class="takeMe">快招我到碗里吧!</p>
             </div>
         </div>
 
@@ -142,10 +143,16 @@
 
     <script src="js/bootstrap/js/jquery.min.js"></script>
     <script src="js/bootstrap/js/bootstrap.min.js"></script>
+    <script src="js/fakeLoader.min.js"></script>
     <script src="js/jquery/jquery-ui/jquery.ui.min.js"></script>
     <script src="js/jquery/full-page/jquery.fullpage.min.js"></script>
     <script>
         $(function() {
+             $("#fakeloader").fakeLoader({
+                timeToHide:1500,
+                bgColor:"#1abc9c",
+                spinner:"spinner6"
+            });
             // jQuery fullPage插件配置
             $('#fullpage').fullpage({
                 'verticalCentered': true,

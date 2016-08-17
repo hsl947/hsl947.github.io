@@ -59,6 +59,7 @@ body {
     border: solid 5px white;
     border-radius: 50%;
     width: 222px;
+    animation: bounceIn 3s;
 }
 
 #fullpage .section h2{
