@@ -36,6 +36,9 @@
                     'navigation': true,
                     'navigationPosition': 'left',
                     afterLoad: function(anchorLink, index) {
+                        if (index == 1) {
+                            $('.section1').find('img').delay(2000).addClass('bounceIn');
+                        }
                         if (index == 2) {
                             $('.section2').find('.workEXP-main').delay(100).animate({
                                 left: '0'
@@ -55,6 +58,9 @@
                         }
                     },
                     onLeave: function(index, direction) {
+                        if (index == 1) {
+                            $('.section1').find('img').delay(2000).removeClass('bounceIn');
+                        }
                         if (index == '2') {
                             $('.section2').find('.workEXP-main').delay(100).animate({
                                 left: '-150%'
