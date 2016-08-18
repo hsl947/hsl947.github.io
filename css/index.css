@@ -14,6 +14,12 @@ body {
     font-size: 33px;
 }
 
+.section h2 {
+    font-family: '微软雅黑';
+    font-size: 66px;
+    font-weight: 900;
+}
+
 
 /*侧边导航栏*/
 
@@ -55,19 +61,19 @@ body {
 
 /*第一屏*/
 
-#fullpage .section img {
+#block-brief img {
     border: solid 5px white;
     border-radius: 50%;
     width: 222px;
 }
 
-#fullpage .section h2{
+#block-brief h2 {
     font-family: '微软雅黑';
     font-size: 66px;
     font-weight: 900;
 }
 
-#fullpage .section ul {
+#block-brief ul {
     text-align: left;
     width: 484px;
     margin: 66px auto 0;
@@ -75,11 +81,11 @@ body {
     font-size: 25px;
 }
 
-#fullpage .section ul a {
+#block-brief ul a {
     color: white;
 }
 
-#fullpage .section ul span {
+#block-brief ul span {
     display: inline-block;
     width: 88px;
     text-align: right;
@@ -97,7 +103,11 @@ body {
 }
 
 #block-workEXP .timebox {
-    width: 363px;
+    text-align: left;
+    width: 484px;
+    margin: 66px auto 0;
+    list-style: none;
+    font-size: 25px;
 }
 
 #block-workEXP .timebox li {
@@ -165,6 +175,7 @@ body {
     display: inline-block;
     height: auto;
     width: 210px;
+    list-style: none;
     margin: 80px 0 0 56px;
     border: 2px solid #FFFFFF;
     font-size: 20px;
@@ -195,24 +206,35 @@ body {
 
 
 /*第四屏*/
-#block-evaluation{
-    width: 1111px;
+
+#block-evaluation {
+    width: 999px;
     height: auto;
     margin: auto;
     background-color: white;
     opacity: 0.4;
-    padding: 38px;
+    padding: 0 38px 38px;
     color: black;
     border-bottom: solid 5px black;
     box-shadow: 3px 1px 1px black;
     overflow: hidden;
 }
-#block-evaluation h3{
+
+#block-evaluation h3 {
     color: grey;
     border-bottom: solid 5px black;
     padding: 8px;
 }
-#block-evaluation ul li{
+
+#block-evaluation ul {
+    text-align: left;
+    width: 484px;
+    margin: 33px auto 0;
+    list-style: none;
+    font-size: 25px;
+}
+
+#block-evaluation ul li {
     width: 1000px;
     line-height: 55px;
     font-weight: 700;
@@ -220,19 +242,23 @@ body {
 
 
 /*第五屏*/
-#block-will .job{
+
+#block-will .job {
     padding-top: 33px;
     font-size: 38px;
     font-weight: bolder;
 }
-#block-will .position{
+
+#block-will .position {
     font-size: 26px;
 }
-#block-will .plus{
+
+#block-will .plus {
     font-size: 24px;
     color: lightgrey;
 }
-#block-will .takeMe{
+
+#block-will .takeMe {
     font-size: 24px;
     font-weight: 900;
     color: greenyellow;
