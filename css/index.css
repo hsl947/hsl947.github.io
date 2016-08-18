@@ -20,6 +20,9 @@ body {
     font-weight: 900;
 }
 
+.bounceIn{
+    animation: bounceIn 2s;
+}
 
 /*侧边导航栏*/
 
