@@ -175,10 +175,10 @@ body {
   border: solid;
   width: 0.4rem;
   height: 0.4rem;
-  font-size: 0.66rem;
-  line-height: 0.3rem;
+  font-size: 0.4rem;
+  line-height: 0.4rem;
+  text-align: center;
   border-radius: 50%;
-  text-indent: -0.05rem;
   color: #ffdc41;
   position: absolute;
   right: 0.7rem;
