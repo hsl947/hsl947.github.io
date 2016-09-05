@@ -1,0 +1,204 @@
+@charset "UTF-8";
+/*
+@description: 大转盘
+@author: souleigh
+@created date: 2016-09-02;
+@version: v1.0
+*/
+/* line 16, ../sass/dial.scss */
+html {
+  background-color: transparent;
+}
+
+/* line 19, ../sass/dial.scss */
+body {
+  background-color: #ff5242;
+}
+
+/* line 22, ../sass/dial.scss */
+.main {
+  width: 6.4rem;
+  height: 14.3rem;
+  background: url("../images/dial-bg.png") no-repeat;
+  background-size: 100%;
+  margin-top: 0.88rem;
+  position: relative;
+}
+/* line 29, ../sass/dial.scss */
+.main .main-title {
+  width: 5.3rem;
+  height: 1.65rem;
+  background: url("../images/main-title.png") no-repeat;
+  background-size: 100%;
+  margin: 0.6rem 0.7rem;
+  padding-top: 0.88rem;
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+/* line 38, ../sass/dial.scss */
+.main .sub-title {
+  font-size: 0.28rem;
+  position: relative;
+  top: 2.1rem;
+  color: white;
+  border: dashed 0.03rem;
+  width: 3.6rem;
+  margin: auto;
+  text-align: center;
+  padding: 0.05rem 0;
+  transform: skew(-10deg);
+}
+/* line 50, ../sass/dial.scss */
+.main .wheel {
+  width: 5.62rem;
+  height: 5.62rem;
+  margin: 2.9rem auto 0;
+  position: relative;
+}
+/* line 55, ../sass/dial.scss */
+.main .wheel .img {
+  width: 5.62rem;
+  height: 5.62rem;
+  background: url("../images/wheel.png") no-repeat;
+  background-size: 100%;
+}
+/* line 61, ../sass/dial.scss */
+.main .wheel .draw {
+  width: 1.20rem;
+  height: 1.20rem;
+  background: url("../images/draw.png") no-repeat;
+  background-size: 100%;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  margin-left: -0.6rem;
+  margin-top: -0.6rem;
+  z-index: 100;
+}
+/* line 71, ../sass/dial.scss */
+.main .wheel .pointer {
+  width: 0.53rem;
+  height: 0.97rem;
+  background: url("../images/pointer.png") no-repeat;
+  background-size: 100%;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  margin-left: -0.26rem;
+  margin-top: -0.97rem;
+  z-index: 99;
+}
+/* line 82, ../sass/dial.scss */
+.main .rules {
+  box-sizing: border-box;
+  width: 6rem;
+  height: 3.7rem;
+  background: white;
+  border-radius: 0.1rem;
+  padding: 0.15rem 0.2rem 0.25rem;
+  margin: 0.9rem 0.2rem 0.6rem;
+}
+/* line 90, ../sass/dial.scss */
+.main .rules .title {
+  box-sizing: border-box;
+  font-size: 0.34rem;
+  width: 1.8rem;
+  height: 0.55rem;
+  line-height: 0.55rem;
+  text-align: center;
+  background-color: #fec529;
+  color: white;
+  margin-left: -0.33rem;
+  position: relative;
+}
+/* line 98, ../sass/dial.scss */
+.main .rules .title .triangle {
+  width: 0;
+  height: 0;
+  position: absolute;
+  left: 0;
+  bottom: -0.13rem;
+  border-width: 0.07rem;
+  border-style: solid;
+  border-color: #df9911 #df9911 transparent transparent;
+}
+/* line 107, ../sass/dial.scss */
+.main .rules p {
+  font-size: 0.24rem;
+  color: #434a54;
+  margin: 0.16rem 0;
+}
+/* line 111, ../sass/dial.scss */
+.main .rules p .red {
+  color: red;
+}
+
+/* line 117, ../sass/dial.scss */
+.mask {
+  width: 6.4rem;
+  height: 13rem;
+  background-color: rgba(1, 1, 1, 0.5);
+  position: absolute;
+  z-index: 101;
+  padding-top: 2.2rem;
+  top: 0;
+  display: none;
+}
+/* line 126, ../sass/dial.scss */
+.mask .popup {
+  width: 6.4rem;
+  height: 5rem;
+  background: url("../images/popup.png") no-repeat center;
+  background-size: 95%;
+  position: relative;
+}
+/* line 132, ../sass/dial.scss */
+.mask .popup .award {
+  width: 0.65rem;
+  height: 1.12rem;
+  background: url("../images/award.png") no-repeat;
+  position: absolute;
+  left: 2rem;
+  top: 2.45rem;
+}
+/* line 140, ../sass/dial.scss */
+.mask .popup .award-info {
+  font-size: 0.3rem;
+  color: #d53f35;
+  position: absolute;
+  left: 2.9rem;
+  top: 2.9rem;
+}
+/* line 147, ../sass/dial.scss */
+.mask .popup .close {
+  border: solid;
+  width: 0.4rem;
+  height: 0.4rem;
+  font-size: 0.66rem;
+  line-height: 0.3rem;
+  border-radius: 50%;
+  text-indent: -0.05rem;
+  color: #ffdc41;
+  position: absolute;
+  right: 0.7rem;
+  top: 0.4rem;
+  cursor: pointer;
+}
+/* line 159, ../sass/dial.scss */
+.mask .popup .button {
+  width: 2.61rem;
+  height: 0.76rem;
+  background: url("../images/button.png") no-repeat;
+  background-size: 100%;
+  font-size: 0.28rem;
+  text-align: center;
+  line-height: 0.60rem;
+  position: absolute;
+  left: 1.9rem;
+  bottom: -0.45rem;
+}
+/* line 168, ../sass/dial.scss */
+.mask .popup .button a {
+  color: #ffc984;
+}

@@ -1,0 +1,187 @@
+@charset "UTF-8";
+/*
+@description: 公用头部底部样式
+@author: xihun
+@created date: 2016-06-15;
+@version: v1.0
+*/
+/* line 12, ../../sass/mod/_reset.scss */
+html {
+  color: #333;
+  background: #fff;
+  overflow-y: scroll;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+}
+/* line 18, ../../sass/mod/_reset.scss */
+html * {
+  outline: 0;
+  -webkit-text-size-adjust: none;
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* line 24, ../../sass/mod/_reset.scss */
+html, body {
+  height: 100%;
+  font-family: "microsoft yahei",Arial,Helvetica,sans-serif;
+}
+
+/* line 29, ../../sass/mod/_reset.scss */
+body, dl, dd, p, form {
+  margin: 0;
+}
+
+/* line 32, ../../sass/mod/_reset.scss */
+ol, ul, li {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+}
+
+/* line 37, ../../sass/mod/_reset.scss */
+em, i {
+  font-style: normal;
+}
+
+/* line 40, ../../sass/mod/_reset.scss */
+h1, h2, h3, h4, h5, h6 {
+  margin: 0;
+  font-weight: normal;
+}
+
+/* line 44, ../../sass/mod/_reset.scss */
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/* line 48, ../../sass/mod/_reset.scss */
+a {
+  color: #666;
+  text-decoration: none;
+  outline: none;
+}
+/* line 52, ../../sass/mod/_reset.scss */
+a:hover {
+  text-decoration: none;
+}
+
+/* line 57, ../../sass/mod/_reset.scss */
+img {
+  border: 0;
+  vertical-align: top;
+}
+
+/* line 61, ../../sass/mod/_reset.scss */
+input, select, button, textarea {
+  outline: 0;
+}
+
+/* line 64, ../../sass/mod/_reset.scss */
+input[type=submit], input[type=button] {
+  border: none;
+}
+
+/* line 11, ../../sass/mod/_header.scss */
+.header {
+  width: 100%;
+  height: 0.88rem;
+  line-height: 0.88rem;
+  position: fixed;
+  top: 0;
+  z-index: 999;
+  max-width: 6.4rem;
+}
+/* line 19, ../../sass/mod/_header.scss */
+.header .header-main {
+  width: 100%;
+  height: 0.88rem;
+  line-height: 0.88rem;
+  text-align: center;
+  position: relative;
+  background: rgba(1, 1, 1, 0.8);
+}
+/* line 24, ../../sass/mod/_header.scss */
+.header .pull-right {
+  position: absolute;
+  right: 0.2rem;
+  top: 0;
+  font-size: 0.8rem;
+  color: white;
+}
+/* line 29, ../../sass/mod/_header.scss */
+.header .pull-left {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 0.88rem;
+  height: 0.88rem;
+  line-height: 0.88rem;
+  text-align: center;
+  font-size: 0.34rem;
+  color: white;
+  padding-left: 0.5rem;
+}
+/* line 35, ../../sass/mod/_header.scss */
+.header .pull-left:before {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  margin-left: -0.40rem;
+  margin-top: -0.15rem;
+  width: 0.25rem;
+  height: 0.25rem;
+  border-bottom: 0.04rem solid #fff;
+  border-left: 0.04rem solid #fff;
+  -moz-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  -webkit-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+/* line 47, ../../sass/mod/_header.scss */
+.header .title {
+  display: block;
+  font-size: 0.34rem;
+  color: #fff;
+}
+
+@font-face {
+  font-family: "iconfont";
+}
+/* line 17, ../../sass/mod/_iconfont.scss */
+.iconfont {
+  font-family: "iconfont" !important;
+  color: white;
+  font-size: 16px;
+  font-style: normal;
+  -webkit-font-smoothing: antialiased;
+  -webkit-text-stroke-width: 0.2px;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* line 28, ../../sass/mod/layout.scss */
+.fn-clear:before, .fn-clear:after {
+  content: "";
+  display: table;
+  line-height: 0;
+}
+
+/* line 33, ../../sass/mod/layout.scss */
+.fn-clear:after {
+  clear: both;
+}
+
+/* line 34, ../../sass/mod/layout.scss */
+.fn-clear {
+  *zoom: 1;
+}
+
+/* line 36, ../../sass/mod/layout.scss */
+body {
+  padding: 0;
+  min-width: 3.2rem;
+  max-width: 6.4rem;
+  margin: 0 auto;
+  background: #f4f4f4;
+}
