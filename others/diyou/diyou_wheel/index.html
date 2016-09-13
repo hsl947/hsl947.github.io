@@ -1,0 +1,95 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+    <meta name="Keywords" content="">
+    <meta name="description" content=""/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0"/>
+    <meta content="black-translucent" name="apple-mobile-web-app-status-bar-style"/>
+    <meta name="apple-mobile-web-app-capable" content="yes"/>
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta content="telephone=no" name="format-detection"/>
+    <meta name="apple-touch-fullscreen" content="yes">
+    <meta name="full-screen" content="yes">
+    <meta name="x5-page-mode" content="app"/>
+    <title>98大转盘</title>
+    <link rel="stylesheet" type="text/css" href="css/layout.css">
+    <link rel="stylesheet" type="text/css" href="css/dial.css">
+</head>
+
+<body>
+    <div class="content-wrap" id="contentWrap">
+        <!-- header -->
+        <header class="header">
+            <div class="header-main">
+                <a href="javascript:;" class="pull-left">返回</a>
+                <span class="title">帝友抽奖</span>
+                <a href="javascript:;" class="pull-right">···</a>
+            </div>
+        </header>
+        <!-- header END-->
+        <!-- main -->
+        <main class="main">
+            <div class="main-title"></div>
+            <div class="sub-title">微信扫一扫、天天抽大奖</div>
+            <div class="wheel">
+                <div class="img"></div>
+                <div class="draw"></div>
+                <div class="pointer"></div>
+            </div>
+            <div class="rules">
+                <div class="title"><div class="triangle"></div>抽奖规则</div>
+                <p>【官方活动】微信扫一扫 天天抽大奖</br> 活动时间：2016年9月8日~2016年9月11日</p>
+                <p>活动详情：</br> 添加帝友互联网金融官方微信号 : <span class="red"> diyouxitong </span>即可参加抽奖，活动期间大礼包，不断让你拿到手软。</p>
+                <p>更多活动详情请关注帝友互联网金融微信号最新活动通知活动。</p>
+            </div>
+        </main>
+        <!-- main END-->
+        <!-- popup -->
+        <div class="mask">
+            <div class="popup">
+                <div class="award"></div>
+                <div class="award-info">小米充电宝</div>
+                <div class="close">×</div>
+                <div class="button"><a href="diyou_dial.html">立即领奖</a></div>
+            </div>
+        </div>
+        <!-- popup END-->
+    </div>
+    <script type="text/javascript" src="js/jquery.min.js"></script>
+    <script type="text/javascript" src="js/common.js"></script>
+    <script type="text/javascript" src="js/jQueryRotate.2.2.js"></script>
+    <script type="text/javascript">
+    var flag = 0;//设置点击标示，防止用户重复点击抽奖开始按钮
+    //点击关闭按钮，关闭弹出窗
+    $('.close').click(function(){
+        $('.mask').css('display','none');
+        flag = 0;
+    })
+    //点击开始转盘抽奖
+    $(function() {
+        $(".draw").click(function() {
+            if(flag == 0){
+                for (var i = 0; i <= 10000; i++) {
+                    $(".img").rotate({
+                         angle:0,  //起始角度
+                　　　　　animateTo:i,  //结束的角度
+                　　　　　duration:5000, //转动时间
+                　　　　　callback:function(){//回调函数
+                            // alert('恭喜获得小米充电宝~');
+                            $('.mask').css('display','block');
+                         },
+                    });
+                    if (i >= 4320) {
+                        break;
+                    }
+                }
+                flag=1;
+            }
+        })
+    });
+    </script>
+</body>
+
+</html>
