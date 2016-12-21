@@ -7,16 +7,26 @@
     <title>婚纱相册</title>
     <link rel="stylesheet" href="assets/css/magnific-popup.css">
     <link rel="stylesheet" href="assets/css/index.css">
+    <link rel="stylesheet" href="assets/css/fakeLoader.css">
     <script src="assets/js/jquery-1.11.1.min.js"></script>
-    <script src="assets/js/minigrid.js"></script>
-    <script src="assets/js/jquery.magnific-popup.min.js"></script>
-    <script src="assets/js/index.js"></script>
+    <script src="assets/js/fakeLoader.min.js"></script>
+    <script>
+    $(function(){
+        // 预加载动画配置
+        $("#fakeloader").fakeLoader({
+            timeToHide: 2000,
+            bgColor: "#1abc9c",
+            spinner: "spinner1",
+        });
+    })
+    </script>
     <!--[if IE]>
 		<script src="http://libs.baidu.com/html5shiv/3.7/html5shiv.min.js"></script>
 	<![endif]-->
 </head>
 
 <body cz-shortcut-listen="true">
+    <div id="fakeloader"></div>
     <div class="container">
         <div class="demo" style="opacity: 1;">
             <div class="grid" style="width: 262px; height: 1062px;">
@@ -47,6 +57,9 @@
             </div>
         </div>
     </div>
+    <script src="assets/js/minigrid.js"></script>
+    <script src="assets/js/jquery.magnific-popup.min.js"></script>
+    <script src="assets/js/index.js"></script>
 </body>
 
 </html>
