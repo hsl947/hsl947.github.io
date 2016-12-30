@@ -1,0 +1,1 @@
+define("comment/commentitem.tpl",function(t,n,e){e.exports=function(t){t=t||{};var n=[];return n.push('<li class="comment-item"> <div class="angle"></div> '),t.now?n.push(' <p class="comment-item-p active">',t.content||"","</p> "):n.push(' <p class="comment-item-p">',t.content||"","</p> "),n.push("</li>"),n.join("")}});
