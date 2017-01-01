@@ -4994,12 +4994,21 @@ input:focus,li:focus,span:focus,i:focus,img:focus,button:focus{outline:0}input[t
             }
         }).call(this);
     </script>
-    <div class="gather-success">
+    <div class="gather-success" style="display: none;">
         <div class="gather-content">
             <p>提交成功！感谢您的参与</p>									
             <button class="gather-btn">确定</button>	
         </div>						
     </div>
+    <script>
+        // $('.j-gsubmit').click({
+        //     $('.gather-success').show();
+        // });
+        
+        $('.gather-btn').click({
+            $('.gather-success').hide();
+        });
+    </script>
 </body>
 
 </html>
