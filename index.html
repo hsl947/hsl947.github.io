@@ -5000,14 +5000,15 @@ input:focus,li:focus,span:focus,i:focus,img:focus,button:focus{outline:0}input[t
             <button class="gather-btn">确定</button>	
         </div>						
     </div>
-    <!--<script>
-        $('.j-gsubmit').click({
-            $('.gather-success').show();
+    <script>
+        $(function(){
+            $('img').each(function(){
+                var srcs = $(this).attr('src');
+                var index = srcs.indexOf('png');
+                $(this).attr('src',srcs.substring(0,index+3));
+            });
         });
-        $('.gather-btn').click({
-            $('.gather-success').hide();
-        });
-    </script>-->
+    </script>
 </body>
 
 </html>
