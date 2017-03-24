@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"  />
+    <title>My Cuiyl</title>
+    <link rel="stylesheet" href="assets/css/magnific-popup.css">
+    <link rel="stylesheet" href="assets/css/index.css">
+    <link rel="stylesheet" href="assets/css/fakeLoader.css">
+    <script src="assets/js/jquery-1.11.1.min.js"></script>
+    <script src="assets/js/fakeLoader.min.js"></script>
+    <script>
+    $(function(){
+        // 预加载动画配置
+        $("#fakeloader").fakeLoader({
+            timeToHide: 2000,
+            bgColor: "#1abc9c",
+            spinner: "spinner1",
+        });
+    })
+    </script>
+    <!--[if IE]>
+		<script src="http://libs.baidu.com/html5shiv/3.7/html5shiv.min.js"></script>
+	<![endif]-->
+</head>
+
+<body cz-shortcut-listen="true">
+    <div id="fakeloader"></div>
+    <div class="container">
+        <div class="demo" style="opacity: 1;">
+            <div class="grid" style="width: 262px; height: 1062px;">
+                <a href="assets/images/1.jpg" class="grid-item image-popup fh5co-board-img" style="transform: translate(6px, 6px);"><img src="./assets/images/bear-avatar.png" style="opacity: 1; transform: scale(1);"></a>
+            </div>
+        </div>
+    </div>
+    <script src="assets/js/minigrid.js"></script>
+    <script src="assets/js/jquery.magnific-popup.min.js"></script>
+    <script src="assets/js/index.js"></script>
+</body>
+
+</html>
