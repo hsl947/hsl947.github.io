@@ -16,18 +16,6 @@
 		<!--标准mui.css-->
 		<link rel="stylesheet" href="css/mui.min.css">
 		<link rel="stylesheet" href="css/fakeLoader.css">
-		<script src="js/jquery.min.js"></script>
-		<script src="js/fakeLoader.min.js"></script>
-		<script>
-		$(function(){
-			// 预加载动画配置
-			$("#fakeloader").fakeLoader({
-				timeToHide: 3000,
-				bgColor: "#1abc9c",
-				spinner: "spinner7",
-			});
-		})
-		</script>
 		<!--App自定义的css-->
 		<style type="text/css">
 			.mui-preview-image.mui-fullscreen {
@@ -254,6 +242,18 @@
 			</ul>
 		</div>
 	</body>
+	<script src="js/jquery.min.js"></script>
+	<script src="js/fakeLoader.min.js"></script>
+	<script>
+	$(function(){
+		// 预加载动画配置
+		$("#fakeloader").fakeLoader({
+			timeToHide: 3000,
+			bgColor: "#1abc9c",
+			spinner: "spinner7",
+		});
+	})
+	</script>
 	<script src="js/mui.min.js"></script>
 	<script src="js/mui.zoom.js"></script>
 	<script src="js/mui.previewimage.js"></script>
