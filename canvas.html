@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<style>
+    #canvas1{
+        width: 300px;
+        height: 150px;
+        background: #f2f2f2;
+    }
+    #canvas2{
+        width: 300px;
+        height: 150px;
+        background: #f2f2f2;
+    }
+</style>
+<body>
+    <canvas id="canvas1"></canvas>
+    <canvas id="canvas2"></canvas>
+<script>
+    // 笑脸
+    var canvas1 = document.getElementById('canvas1');
+    if(canvas1.getContext){
+        var ctx = canvas1.getContext('2d');
+        ctx.beginPath();
+        ctx.arc(150,75,50,0,Math.PI*2,true);
+        ctx.moveTo(130,60);//左眼
+        ctx.arc(125,60,5,0,Math.PI*2,true);
+        ctx.moveTo(180,60);//右眼
+        ctx.arc(175,60,5,0,Math.PI*2,true);
+        ctx.moveTo(175,80);//嘴巴
+        ctx.arc(150,80,25,0,Math.PI,false);
+        ctx.stroke();
+    }
+    //爱心
+    var canvas = document.getElementById('canvas2');
+    if (canvas.getContext){
+        var ctx = canvas.getContext('2d');
+        //二次曲线
+        ctx.beginPath();
+        ctx.moveTo(150,40);
+        ctx.bezierCurveTo(150,37,145,25,125,25);
+        ctx.bezierCurveTo(95,25,95,62.5,95,62.5);
+        ctx.bezierCurveTo(95,80,115,102,150,120);
+        ctx.bezierCurveTo(185,102,205,80,205,62.5);
+        ctx.bezierCurveTo(205,62.5,205,25,175,25);
+        ctx.bezierCurveTo(160,25,150,37,150,40);
+        ctx.fillStyle = "indianred";
+        ctx.fill();
+    }
+</script>
+</body>
+</html>    
