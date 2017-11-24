@@ -1,42 +1,57 @@
 
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <title>Document</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>input file capture</title>
+<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, minimal-ui, shrink-to-fit=no">
+<style>
+body {font-family: Arial, Roboto, 'Droid Sans', 'Hiragino Sans GB', 'Microsoft YaHei', 'Simsun', STXihei, 'sans-serif';font-size: 14px;}
+dl:not(:last-child) {overflow: hidden;padding: 10px;margin-bottom: 10px;border-bottom: 1px dashed #dedede;}
+dt {padding-bottom: 10px;font-weight: bold;color: #f32600;}
+dd {margin: 0;padding:5px 0 0 20px;border-left: 2px solid #cddc39;}
+</style>
 </head>
 <body>
-    <video id="video" width="640" height="480" autoplay></video>
-<button id="snap">Snap Photo</button>
-<canvas id="canvas" width="640" height="480"></canvas>
-    <script>
-        var aVideo=document.getElementById('video');
-                var aCanvas=document.getElementById('canvas');
-                var ctx=aCanvas.getContext('2d');
+<dl>
+    <dt>普通没有 <code>capture</code> 属性</dt>
+    <dd><input type="file"></dd>
+    <dd><p>没有 <code>capture</code> 捕获属性时，仅为选择上传文件。</p></dd>
+    <dt><code>capture=""</code> 为空的时候</dt>
+    <dd><input type="file" capture=""></dd>
+    <dd><p>当 <code>capture</code> 捕获属性为空时，基于 <code>capture</code> 的值为布尔值类型，所以这个时候可以看到启用了摄像头，<strong>后置摄像头</strong>开启拍照或者录像功能。</p></dd>
+    <dt><code>capture="user"</code> 前置摄像头</dt>
+    <dd><input type="file" capture="user"></dd>
+    <dd><p>当 <code>capture</code> 捕获属性为 <code>user</code> 时，开启前置摄像头的拍照或者录像功能。</p></dd>
+</dl>
+<dl>
+    <dt>类型：视频 多个文件</dt>
+    <dd><input type="file" accept="video/*" multiple=""></dd>
+    <dd>
+        <p>选择多个<strong>视频</strong>类型文件，未使用 <code>capture</code> 属性时。</p>
+    </dd>
+    <dt>类型：图片 多个文件</dt>
+    <dd><input type="file" accept="image/*" multiple=""></dd>
+    <dd>
+        <p>选择多个<strong>图片</strong>类型文件，未使用 <code>capture</code> 属性时。</p>
+    </dd>
+    <dt>无类型要求 多个文件</dt>
+    <dd><input type="file" multiple=""></dd><dd>
+        <p>选择多个<strong>视频</strong>或者<strong>图片</strong>类型文件，未使用 <code>capture</code> 属性时。</p>
+    </dd>
+</dl>
+<dl>
+    <dt><code>capture="user"</code> 前置摄像头 视频</dt>
+    <dd><input type="file" capture="user" accept="video/*" multiple=""></dd>
+    <dd>
+        <p>使用 <code>capture="user"</code> 开启前置摄像头时，设定为<strong>视频</strong>类型文件，手机中不会显示<em>照片</em>，同时 <code>multiple</code> 多文件上传无效。</p>
+    </dd>
+    <dt><code>capture="user"</code> 前置摄像头 图片</dt>
+    <dd><input type="file" capture="user" accept="image/*" multiple=""></dd>
+    <dd>
+        <p>使用 <code>capture="user"</code> 开启前置摄像头时，设定为<strong>图片</strong>类型文件，手机中不会显示<em>视频</em>，同时 <code>multiple</code> 多文件上传无效。</p>
+    </dd>
+</dl>
 
-                navigator.getUserMedia  = navigator.getUserMedia ||
-                          navigator.webkitGetUserMedia ||
-                          navigator.mozGetUserMedia ||
-                          navigator.msGetUserMedia;//获取媒体对象（这里指摄像头）
-              navigator.getUserMedia({video:true}, gotStream, noStream);//参数1获取用户打开权限；参数二成功打开后调用，并传一个视频流对象，参数三打开失败后调用，传错误信息
-
-                function gotStream(stream) {
-                        video.src = URL.createObjectURL(stream);
-                        video.onerror = function () {
-                          stream.stop();
-                        };
-                        stream.onended = noStream;
-                        video.onloadedmetadata = function () {
-                          alert('摄像头成功打开！');
-                        };
-                }
-                function noStream(err) {
-                        alert(err);
-      }
-      document.getElementById("snap").addEventListener("click", function() {
-
-                ctx.drawImage(aVideo, 0, 0, 640, 480);//将获取视频绘制在画布上
-});
-    </script>
 </body>
 </html>
