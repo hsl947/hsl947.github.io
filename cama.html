@@ -88,15 +88,70 @@
             <p>使用 <code>capture="user"</code> 开启前置摄像头时，设定为<strong>视频</strong>类型文件，手机中不会显示<em>照片</em>，同时 <code>multiple</code> 多文件上传无效。</p>
         </dd>
         <dt><code>capture="user"</code> 前置摄像头 图片</dt>
-        <dd>
-            <input type="file" capture="user" accept="image/*" multiple="">
+        <dd id="file-box">
+            <input id="files" type="file" capture="user" accept="image/*" multiple="">
+            <canvas style="width: 200px;height:200px;display: none;"></canvas>
         </dd>
         <dd>
             <p>使用 <code>capture="user"</code> 开启前置摄像头时，设定为<strong>图片</strong>类型文件，手机中不会显示<em>视频</em>，同时 <code>multiple</code> 多文件上传无效。</p>
         </dd>
     </dl>
     <script>
+        var input = document.querySelector('#files'); // see Example 4
 
+        input.onchange = function () {
+          var file = input.files[0];
+          console.log(file);
+          // upload(file);
+          drawOnCanvas(file);
+          // displayAsImage(file);
+        };
+
+        //上传到服务器
+        function upload(file) {
+          var form = new FormData(),
+              xhr = new XMLHttpRequest();
+
+          form.append('image', file);
+          xhr.open('post', 'server.php', true);
+          xhr.send(form);
+        }
+
+        //该图像也可以显示在客户端，而无需上传，例如用于客户端图像编辑的目的，使用 FileReader和一个canvas元素
+        function drawOnCanvas(file) {
+          var reader = new FileReader();
+
+          reader.onload = function (e) {
+            var dataURL = e.target.result,
+                c = document.querySelector('canvas'),
+                ctx = c.getContext('2d'),
+                img = new Image();
+            c.style.display = 'block';
+            img.onload = function() {
+              c.width = img.width;
+              c.height = img.height;
+              ctx.drawImage(img, 0, 0);
+            };
+
+            img.src = dataURL;
+          };
+
+          reader.readAsDataURL(file);
+        }
+
+        //使用 createObjectURL()方法和img元素来显示图像
+        function displayAsImage(file) {
+          var imgURL = URL.createObjectURL(file),
+              img = document.createElement('img');
+
+          img.onload = function() {
+            URL.revokeObjectURL(imgURL);
+          };
+          img.width = '200';
+          img.height = '200';
+          img.src = imgURL;
+          document.getElementById('file-box').appendChild(img);
+        }
     </script>
 </body>
 
