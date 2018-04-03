@@ -47,6 +47,7 @@
 
 ### 一些小作品
  - [vue-vdo](https://hsl947.github.io/vue-vdo/index.html) : 使用vue模仿豆瓣电影。
+ - [vue-vux](https://hsl947.github.io/vux-ui-demo/index.html) : 使用vue-vux改版公司部分产品页面。
  ---
 
 # 技能清单
