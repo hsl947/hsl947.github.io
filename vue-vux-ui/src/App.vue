@@ -7,7 +7,7 @@
 
 <script>
     import '../static/js/wap_auto.js';
-    import TabBar from './components/TabBar'
+    import TabBar from './components/common/TabBar'
     export default {
         components: {
             TabBar

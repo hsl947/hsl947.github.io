@@ -1,5 +1,5 @@
 <template>
-    <div>
+    <div style="padding-bottom: .5rem;">
         <Headers></Headers>
         <Banner></Banner>
         <NewLoan></NewLoan>
@@ -7,10 +7,10 @@
     </div>
 </template>
 <script>
-    import Banner from '../components/Banner'
-    import Headers from '../components/Header'
-    import NewLoan from '../components/NewLoan'
-    import RecommLoan from '../components/RecommLoan'
+    import Banner from '../index/Banner'
+    import Headers from '../index/Header'
+    import NewLoan from '../index/NewLoan'
+    import RecommLoan from '../index/RecommLoan'
     export default {
         components: {
             Banner,

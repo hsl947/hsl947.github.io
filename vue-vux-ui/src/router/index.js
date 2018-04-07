@@ -1,8 +1,8 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import Home from '@/components/Home'
-import Loan from '@/components/Loan'
-import MemberCenter from '@/components/MemberCenter'
+import Home from '@/components/index/Home'
+import Loan from '@/components/loan/Loan'
+import MemberCenter from '@/components/member/MemberCenter'
 Vue.use(Router)
 
 export default new Router({

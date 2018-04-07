@@ -20,7 +20,7 @@
         TransferDom,
         Popup
     } from 'vux'
-    import LeftDialog from '../components/LeftDialog'
+    import LeftDialog from '../index/LeftDialog'
     export default {
         directives: {
             TransferDom

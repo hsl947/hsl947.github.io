@@ -62,7 +62,7 @@
         width: 20px;
         height: 20px;
         vertical-align: top;
-        background: url('../assets/icon-settings.jpg') no-repeat;
+        background: url('../../assets/icon-settings.jpg') no-repeat;
         background-size: 100% auto;
         margin: 0.03rem 0.08rem 0 0;
     }
