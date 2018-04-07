@@ -15,6 +15,7 @@ body {
 
 #leftTabBox {
     position: relative;
+    padding-bottom: 1rem;
 }
 
 #leftTabBox .hd {
