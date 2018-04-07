@@ -108,7 +108,12 @@
     <script type="text/javascript">
         TouchSlide({
             slideCell: "#leftTabBox",
-            endFun: function(i, c) {
+            startFun: function(i, c) {
+                $('.page-item').each(function() {
+                    $(this).find('img').removeClass('on');
+                })
+            },
+            endFun: (i, c) => {
                 $('.page' + (i + 1)).find('img').addClass('on');
                 switch (i) {
                     case 0:
