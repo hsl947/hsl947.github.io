@@ -1,0 +1,413 @@
+@charset "UTF-8";
+*,
+html,
+body {
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    /* Firefox */
+    -webkit-box-sizing: border-box;
+    /* Safari */
+    height: 100%;
+    overflow: auto;
+}
+
+body {
+    background: #fff;
+}
+
+#leftTabBox {
+    position: relative;
+}
+
+#leftTabBox .hd {
+    position: absolute;
+    top: 12.2rem;
+    background: #d2d2d2;
+    height: .3rem;
+    line-height: .3rem;
+    border-radius: .3rem;
+    text-align: center;
+    left: 50%;
+    -webkit-transform: translate(-50%, 0);
+    font-size: 0;
+    display: none;
+}
+
+#leftTabBox .hd li {
+    width: .15rem;
+    height: .15rem;
+    border-radius: 50%;
+    background: #959595;
+    display: inline-block;
+    margin: 0 .1rem;
+    vertical-align: middle;
+    vertical-align: -webkit-baseline-middle;
+}
+
+#leftTabBox .hd li.on {
+    background: #fff;
+}
+
+.page-list {
+    background: url(images/item_bg.png) no-repeat center top;
+    background-size: 7.5rem 2.8rem;
+}
+
+.page-list .page-list-title {
+    position: absolute;
+    top: 1.3rem;
+    left: .6rem;
+    color: #ffffff;
+    font-size: .44rem;
+    height: .5rem;
+    line-height: .5rem;
+    font-weight: 900;
+}
+
+.page-list .page-list-title .step {
+    font-size: .3rem;
+    margin-right: .25rem;
+}
+
+.page-list .page-list-title .num {
+    font-size: .46rem;
+    font-style: italic;
+    font-weight: 400;
+}
+
+.page-item {
+    position: relative;
+    height: 18rem;
+}
+
+.page-item img {
+    -webkit-transition: all ease .7s 1.5s;
+}
+
+.page1 {
+    background: url(images/page1_bg.jpg) no-repeat center top;
+    background-size: 7.5rem 13.33rem;
+    text-align: center;
+}
+
+.page1 .page1-1 {
+    position: absolute;
+    top: 3.2rem;
+    left: 50%;
+    margin-left: -1.9rem;
+    width: 3.8rem;
+    height: 3.85rem;
+}
+
+.page1 .page1-2 {
+    position: absolute;
+    top: 7.3rem;
+    left: 50%;
+    margin-left: -1.93rem;
+    width: 3.86rem;
+    height: 1.8rem;
+}
+
+.page1 .page1-3 {
+    position: absolute;
+    top: 4.15rem;
+    left: 50%;
+    margin-left: -.78rem;
+    width: 1.56rem;
+    height: 2.08rem;
+}
+
+.page2 {
+    background: url(images/page2_bg.jpg) no-repeat center top;
+    background-size: 7.5rem 13.33rem;
+    text-align: center;
+}
+
+.page2 .page2-1 {
+    position: absolute;
+    top: 7.2rem;
+    left: .1rem;
+    width: 2.75rem;
+    height: 3.75rem;
+}
+
+.page2 .page2-2 {
+    position: absolute;
+    top: 7.1rem;
+    left: 3.8rem;
+    width: 3.29rem;
+    height: 4.08rem;
+}
+
+.page3 .page3-1 {
+    position: absolute;
+    top: 3.65rem;
+    left: 50%;
+    margin-left: -3.23rem;
+    width: 6.46rem;
+    height: 1.7rem;
+}
+
+.page3 .page3-2 {
+    position: absolute;
+    top: 6.35rem;
+    left: 50%;
+    margin-left: -3.02rem;
+    width: 6.04rem;
+    height: 1.21rem;
+}
+
+.page3 .page3-3 {
+    position: absolute;
+    top: 8.45rem;
+    left: 50%;
+    margin-left: -3.05rem;
+    width: 6.1rem;
+    height: 1.7rem;
+}
+
+.page4 .page4-1 {
+    position: absolute;
+    top: 3.1rem;
+    left: 50%;
+    margin-left: -3.05rem;
+    width: 6.1rem;
+    height: 1.13rem;
+}
+
+.page4 .page4-2 {
+    position: absolute;
+    top: 4.55rem;
+    left: 50%;
+    margin-left: -3.02rem;
+    width: 6.04rem;
+    height: 3.45rem;
+}
+
+.page4 .page4-3 {
+    position: absolute;
+    top: 8.4rem;
+    left: 50%;
+    margin-left: -3rem;
+    width: 6rem;
+    height: 2.64rem;
+}
+
+.page5 .page5-1 {
+    position: absolute;
+    top: 2.9rem;
+    left: 50%;
+    margin-left: -3.16rem;
+    width: 6.33rem;
+    height: 3.93rem;
+}
+
+.page5 .page5-2 {
+    position: absolute;
+    top: 7.2rem;
+    left: 50%;
+    margin-left: -2.95rem;
+    width: 5.87rem;
+    height: 4.11rem;
+}
+
+.page6 .page6-1 {
+    position: absolute;
+    top: 2.9rem;
+    left: 50%;
+    margin-left: -3.1rem;
+    width: 4.63rem;
+    height: 3.78rem;
+}
+
+.page6 .page6-2 {
+    position: absolute;
+    top: 7.2rem;
+    left: 50%;
+    margin-left: -3.2rem;
+    width: 6.15rem;
+    height: 4.83rem;
+}
+
+.page7 .page7-1 {
+    position: absolute;
+    top: 3.1rem;
+    left: 50%;
+    margin-left: -2.93rem;
+    width: 5.87rem;
+    height: 1.78rem;
+}
+
+.page7 .page7-2 {
+    position: absolute;
+    top: 5.4rem;
+    left: 50%;
+    margin-left: -2.88rem;
+    width: 5.76rem;
+    height: 2.95rem;
+}
+
+.page7 .page7-3 {
+    position: absolute;
+    top: 8.8rem;
+    left: 50%;
+    margin-left: -3rem;
+    width: 6rem;
+    height: 1.8rem;
+}
+
+.page8 .page8-1 {
+    position: absolute;
+    top: 3.1rem;
+    left: 50%;
+    margin-left: -3.11rem;
+    width: 6.22rem;
+    height: 2.22rem;
+}
+
+.page8 .page8-2 {
+    position: absolute;
+    top: 6rem;
+    left: 50%;
+    margin-left: -3.17rem;
+    width: 6.34rem;
+    height: 1.73rem;
+}
+
+.page8 .page8-3 {
+    position: absolute;
+    top: 8.55rem;
+    left: 50%;
+    margin-left: -3.09rem;
+    width: 6.18rem;
+    height: 1.73rem;
+}
+
+.page9 .page9-1 {
+    position: absolute;
+    top: 3rem;
+    left: 50%;
+    margin-left: -3rem;
+    width: 6rem;
+    height: 4.4rem;
+}
+
+.page9 .page9-2 {
+    position: absolute;
+    top: 8rem;
+    left: 50%;
+    margin-left: -3rem;
+    width: 6rem;
+    height: 3.17rem;
+}
+
+.page10 .page10-1 {
+    position: absolute;
+    top: 3rem;
+    left: 50%;
+    margin-left: -2.63rem;
+    width: 5.27rem;
+    height: 1.81rem;
+}
+
+.page10 .page10-2 {
+    position: absolute;
+    top: 6rem;
+    left: 50%;
+    margin-left: -2.97rem;
+    width: 5.94rem;
+    height: 1.92rem;
+}
+
+.page10 .page10-3 {
+    position: absolute;
+    top: 9rem;
+    left: 50%;
+    margin-left: -3.08rem;
+    width: 6.16rem;
+    height: 2rem;
+}
+
+.effect1 {
+    opacity: 0;
+    -webkit-transform: scale(0);
+    -webkit-transition-duration: .5s;
+}
+
+.effect1-3 {
+    -webkit-transform: scale(1.3);
+}
+
+.effect1.on {
+    -webkit-transform: scale(1);
+    opacity: 1;
+}
+
+.effect1-1.on {
+    -webkit-transition-delay: 1s;
+}
+
+.effect1-2.on {
+    -webkit-transition-delay: 1.5s;
+}
+
+.effect1-3.on {
+    -webkit-transition-delay: 2s;
+}
+
+.effect2 {
+    opacity: 0;
+    -webkit-transition: all ease .7s 1.5s;
+}
+
+.effect2-1 {
+    -webkit-transform: translate3d(2rem, 0, 0) scale(1);
+}
+
+.effect2-2 {
+    -webkit-transform: translate3d(-2rem, 0, 0) scale(1);
+}
+
+.effect2.on {
+    -webkit-transform: translate3d(0, 0, 0) scale(1, 1);
+    opacity: 1;
+    -webkit-transition-delay: 1.2s;
+}
+
+.effect3 {
+    opacity: 0;
+    -webkit-transition: all ease .7s 1.5s;
+}
+
+.effect3-1 {
+    -webkit-transform: translate3d(2rem, 0, 0) scale(1);
+}
+
+.effect3-2 {
+    -webkit-transform: translate3d(-2rem, 0, 0) scale(1);
+}
+
+.effect3.on {
+    -webkit-transform: translate3d(0, 0, 0) scale(1, 1);
+    opacity: 1;
+    -webkit-transition-delay: 1s;
+}
+
+.effect4 {
+    opacity: 0;
+    -webkit-transition: all ease .7s 1.5s;
+    -webkit-transform: translate3d(0, -10rem, 0) scale(1);
+}
+
+.effect4.on {
+    -webkit-transform: translate3d(0, 0, 0) scale(1, 1);
+    opacity: 1;
+}
+
+.effect4-1.on {
+    -webkit-transition-delay: 1s;
+}
+
+.effect4-2.on {
+    -webkit-transition-delay: 1.5s;
+}
