@@ -120,11 +120,11 @@
         $(function() {
             TouchSlide({
                 slideCell: "#leftTabBox",
-                startFun: function(i, c) {
-                    $('.page-item').each(function() {
-                        $(this).find('img').removeClass('on');
-                    });
-                },
+                // startFun: function(i, c) {
+                //     $('.page-item').each(function() {
+                //         $(this).find('img').removeClass('on');
+                //     });
+                // },
                 endFun: (i, c) => {
                     $('.page' + (i + 1)).find('img').addClass('on');
                     switch (i) {
