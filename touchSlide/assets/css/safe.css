@@ -46,14 +46,38 @@ body {
     background: #fff;
 }
 
+@keyframes mymove {
+    0% {
+        -webkit-transform: translateX(.1rem);
+    }
+    50% {
+        -webkit-transform: translateX(0);
+    }
+    100% {
+        -webkit-transform: translateX(.1rem);
+    }
+}
+
+@-webkit-keyframes mymove {
+    0% {
+        -webkit-transform: translateX(.1rem);
+    }
+    50% {
+        -webkit-transform: translateX(0);
+    }
+    100% {
+        -webkit-transform: translateX(.1rem);
+    }
+}
+
 .page-list {
     background: url(images/item_bg.png) no-repeat center top;
-    background-size: 7.5rem 2.8rem;
+    background-size: 7.5rem 2.35rem;
 }
 
 .page-list .page-list-title {
     position: absolute;
-    top: 1.3rem;
+    top: .8rem;
     left: .6rem;
     color: #ffffff;
     font-size: .4rem;
@@ -115,6 +139,18 @@ body {
     height: 2.08rem;
 }
 
+.page1 .page1-4 {
+    position: absolute;
+    top: 11.5rem;
+    left: 50%;
+    margin-left: -.14rem;
+    width: .52rem;
+    height: .28rem;
+    -webkit-transition: all ease .7s .5s;
+    -webkit-transform: translateX(-3rem);
+    animation: mymove infinite 1s;
+}
+
 .page2 {
     background: url(images/page2_bg.jpg) no-repeat center top;
     background-size: 7.5rem 13.33rem;
@@ -123,8 +159,8 @@ body {
 
 .page2 .page2-1 {
     position: absolute;
-    top: 7.2rem;
-    left: .1rem;
+    top: 7.4rem;
+    left: .3rem;
     width: 2.75rem;
     height: 3.75rem;
 }
@@ -132,14 +168,14 @@ body {
 .page2 .page2-2 {
     position: absolute;
     top: 7.1rem;
-    left: 3.8rem;
+    left: 3.9rem;
     width: 3.29rem;
     height: 4.08rem;
 }
 
 .page3 .page3-1 {
     position: absolute;
-    top: 3.65rem;
+    top: 3.3rem;
     left: 50%;
     margin-left: -3.23rem;
     width: 6.46rem;
@@ -148,7 +184,7 @@ body {
 
 .page3 .page3-2 {
     position: absolute;
-    top: 6.35rem;
+    top: 6rem;
     left: 50%;
     margin-left: -3.02rem;
     width: 6.04rem;
@@ -157,7 +193,7 @@ body {
 
 .page3 .page3-3 {
     position: absolute;
-    top: 8.45rem;
+    top: 8.1rem;
     left: 50%;
     margin-left: -3.05rem;
     width: 6.1rem;
@@ -166,7 +202,7 @@ body {
 
 .page4 .page4-1 {
     position: absolute;
-    top: 3.1rem;
+    top: 2.8rem;
     left: 50%;
     margin-left: -3.05rem;
     width: 6.1rem;
@@ -175,7 +211,7 @@ body {
 
 .page4 .page4-2 {
     position: absolute;
-    top: 4.55rem;
+    top: 4.3rem;
     left: 50%;
     margin-left: -3.02rem;
     width: 6.04rem;
@@ -184,7 +220,7 @@ body {
 
 .page4 .page4-3 {
     position: absolute;
-    top: 8.4rem;
+    top: 8.1rem;
     left: 50%;
     margin-left: -3rem;
     width: 6rem;
@@ -193,7 +229,7 @@ body {
 
 .page5 .page5-1 {
     position: absolute;
-    top: 2.9rem;
+    top: 2.6rem;
     left: 50%;
     margin-left: -3.16rem;
     width: 6.33rem;
@@ -202,7 +238,7 @@ body {
 
 .page5 .page5-2 {
     position: absolute;
-    top: 7.2rem;
+    top: 6.9rem;
     left: 50%;
     margin-left: -2.95rem;
     width: 5.87rem;
@@ -211,7 +247,7 @@ body {
 
 .page6 .page6-1 {
     position: absolute;
-    top: 2.9rem;
+    top: 2.4rem;
     left: 50%;
     margin-left: -3.1rem;
     width: 4.63rem;
@@ -220,7 +256,7 @@ body {
 
 .page6 .page6-2 {
     position: absolute;
-    top: 7.2rem;
+    top: 6.5rem;
     left: 50%;
     margin-left: -3.2rem;
     width: 6.15rem;
@@ -229,7 +265,7 @@ body {
 
 .page7 .page7-1 {
     position: absolute;
-    top: 3.1rem;
+    top: 2.8rem;
     left: 50%;
     margin-left: -2.93rem;
     width: 5.87rem;
@@ -238,7 +274,7 @@ body {
 
 .page7 .page7-2 {
     position: absolute;
-    top: 5.4rem;
+    top: 5.1rem;
     left: 50%;
     margin-left: -2.88rem;
     width: 5.76rem;
@@ -247,7 +283,7 @@ body {
 
 .page7 .page7-3 {
     position: absolute;
-    top: 8.8rem;
+    top: 8.5rem;
     left: 50%;
     margin-left: -3rem;
     width: 6rem;
@@ -256,7 +292,7 @@ body {
 
 .page8 .page8-1 {
     position: absolute;
-    top: 3.1rem;
+    top: 2.8rem;
     left: 50%;
     margin-left: -3.11rem;
     width: 6.22rem;
@@ -265,7 +301,7 @@ body {
 
 .page8 .page8-2 {
     position: absolute;
-    top: 6rem;
+    top: 5.7rem;
     left: 50%;
     margin-left: -3.17rem;
     width: 6.34rem;
@@ -274,7 +310,7 @@ body {
 
 .page8 .page8-3 {
     position: absolute;
-    top: 8.55rem;
+    top: 8.2rem;
     left: 50%;
     margin-left: -3.09rem;
     width: 6.18rem;
@@ -292,7 +328,7 @@ body {
 
 .page9 .page9-2 {
     position: absolute;
-    top: 8rem;
+    top: 7.7rem;
     left: 50%;
     margin-left: -3rem;
     width: 6rem;
@@ -301,7 +337,7 @@ body {
 
 .page10 .page10-1 {
     position: absolute;
-    top: 3rem;
+    top: 2.7rem;
     left: 50%;
     margin-left: -2.63rem;
     width: 5.27rem;
@@ -310,7 +346,7 @@ body {
 
 .page10 .page10-2 {
     position: absolute;
-    top: 6rem;
+    top: 5.7rem;
     left: 50%;
     margin-left: -2.97rem;
     width: 5.94rem;
@@ -319,7 +355,7 @@ body {
 
 .page10 .page10-3 {
     position: absolute;
-    top: 9rem;
+    top: 8.7rem;
     left: 50%;
     margin-left: -3.08rem;
     width: 6.16rem;
