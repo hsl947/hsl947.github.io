@@ -114,33 +114,35 @@
         </ul>
     </div>
     <script src="assets/js/jquery-1.8.2.min.js"></script>
-    <script src="assets/js/TouchSlide.1.1.js"></script>
     <script src="assets/js/wapauto.js"></script>
+    <script src="assets/js/TouchSlide.1.1.js"></script>
     <script type="text/javascript">
-        TouchSlide({
-            slideCell: "#leftTabBox",
-            // startFun: function(i, c) {
-            //     $('.page-item').each(function() {
-            //         $(this).find('img').removeClass('on');
-            //     });
-            // },
-            // endFun: (i, c) => {
-            //     $('.page' + (i + 1)).find('img').addClass('on');
-            //     switch (i) {
-            //         case 0:
-            //             $('#hd').hide();
-            //             break;
-            //         case 1:
-            //             $('#hd').hide();
-            //             break;
-            //         case 2:
-            //             $('#hd').show();
-            //             $('#hd li').eq(0).hide();
-            //             $('#hd li').eq(1).hide();
-            //             break;
-            //     }
-            // }
-        });
+        $(function() {
+            TouchSlide({
+                slideCell: "#leftTabBox",
+                // startFun: function(i, c) {
+                //     $('.page-item').each(function() {
+                //         $(this).find('img').removeClass('on');
+                //     });
+                // },
+                // endFun: (i, c) => {
+                //     $('.page' + (i + 1)).find('img').addClass('on');
+                //     switch (i) {
+                //         case 0:
+                //             $('#hd').hide();
+                //             break;
+                //         case 1:
+                //             $('#hd').hide();
+                //             break;
+                //         case 2:
+                //             $('#hd').show();
+                //             $('#hd li').eq(0).hide();
+                //             $('#hd li').eq(1).hide();
+                //             break;
+                //     }
+                // }
+            });
+        })
     </script>
 </body>
 

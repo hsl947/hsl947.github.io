@@ -15,6 +15,10 @@ body {
 
 #leftTabBox {
     position: relative;
+    transform: perspective(1000);
+    -moz-transform: perspective(1000);
+    -o-transform: perspective(1000);
+    -webkit-transform: perspective(1000);
 }
 
 #leftTabBox .hd {
