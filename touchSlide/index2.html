@@ -131,13 +131,18 @@
                 // Auto center this flipbook
                 autoCenter: true,
                 acceleration: true,
-                duration: 500,
+                duration: 1000,
                 // Elevation
-                // elevation: 50,
+                elevation: 50,
             });
             $('.page1').find('img').addClass('on');
+            $("#flipbook").bind("turning", function(event, page, view) {
+                $('.page-item').each(function() {
+                    $(this).find('img').stop().addClass('off');
+                });
+            });
             $("#flipbook").bind("turned", function(event, page, view) {
-                $('.page' + page).find('img').addClass('on');
+                $('.page' + page).find('img').removeClass('off').addClass('on');
             });
             document.addEventListener('touchmove', function(e) {
                 e.preventDefault()
