@@ -456,3 +456,8 @@ body {
 .effect4-2.on {
     -webkit-transition-delay: 1.5s;
 }
+
+#flipbook::-webkit-scrollbar,
+#flipbook *::-webkit-scrollbar {
+    display: none;
+}
