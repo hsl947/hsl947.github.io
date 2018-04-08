@@ -15,10 +15,10 @@ body {
 
 #leftTabBox {
     position: relative;
-    transform: perspective(1000);
-    -moz-transform: perspective(1000);
-    -o-transform: perspective(1000);
-    -webkit-transform: perspective(1000);
+    -webkit-perspective: 2000px;
+    -moz-perspective: 2000px;
+    -ms-perspective: 2000px;
+    perspective: 2000px;
 }
 
 #leftTabBox .hd {
@@ -75,7 +75,7 @@ body {
 }
 
 .page-list {
-    background: url(images/item_bg.png) no-repeat center top;
+    background: url(images/item_bg.png) no-repeat center top #fff;
     background-size: 7.5rem 2.35rem;
 }
 
@@ -104,6 +104,9 @@ body {
 .page-item {
     position: relative;
     height: 18rem;
+    width: 750px;
+    height: 1600px;
+    background-color: white;
 }
 
 .page-item img {
@@ -111,7 +114,7 @@ body {
 }
 
 .page1 {
-    background: url(images/page1_bg.jpg) no-repeat center top;
+    background: url(images/page1_bg.jpg) no-repeat center top #fff;
     background-size: 7.5rem 13.33rem;
     text-align: center;
 }
@@ -156,7 +159,7 @@ body {
 }
 
 .page2 {
-    background: url(images/page2_bg.jpg) no-repeat center top;
+    background: url(images/page2_bg.jpg) no-repeat center top #fff;
     background-size: 7.5rem 13.33rem;
     text-align: center;
 }
@@ -425,6 +428,18 @@ body {
 
 .effect2-2.on {
     -webkit-transition-delay: 2s;
+}
+
+.effect2-1.off {
+    opacity: 0;
+    -webkit-transition: none;
+    -webkit-transform: translate3d(2rem, 0, 0) scale(1);
+}
+
+.effect2-2.off {
+    opacity: 0;
+    -webkit-transition: none;
+    -webkit-transform: translate3d(-2rem, 0, 0) scale(1);
 }
 
 .effect3 {
