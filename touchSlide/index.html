@@ -125,7 +125,7 @@
                 //         $(this).find('img').removeClass('on');
                 //     });
                 // },
-                endFun: (i, c) => {
+                endFun: function(i, c) {
                     $('.page' + (i + 1)).find('img').addClass('on');
                     switch (i) {
                         case 0:
