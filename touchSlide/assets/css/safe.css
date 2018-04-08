@@ -409,7 +409,14 @@ body {
 .effect2.on {
     -webkit-transform: translate3d(0, 0, 0) scale(1, 1);
     opacity: 1;
-    -webkit-transition-delay: 1.2s;
+}
+
+.effect2-1.on {
+    -webkit-transition-delay: 1s;
+}
+
+.effect2-2.on {
+    -webkit-transition-delay: 2s;
 }
 
 .effect3 {
