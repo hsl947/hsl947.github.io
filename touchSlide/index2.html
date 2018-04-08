@@ -121,6 +121,7 @@
                     autoCenter: true,
                 });
             });
+
             $("#flipbook").turn({
                 width: w,
                 height: h,
@@ -129,14 +130,13 @@
                 gradients: true,
                 // Auto center this flipbook
                 autoCenter: true,
+                acceleration: true,
+                duration: 500,
                 // Elevation
-                elevation: 50,
+                // elevation: 50,
             });
+            $('.page1').find('img').addClass('on');
             $("#flipbook").bind("turned", function(event, page, view) {
-                // $('.page-item').each(function() {
-                //     $(this).find('img').removeClass('on');
-                // });
-                console.log(page);
                 $('.page' + page).find('img').addClass('on');
             });
             document.addEventListener('touchmove', function(e) {
