@@ -484,3 +484,7 @@ body {
 #flipbook *::-webkit-scrollbar {
     display: none;
 }
+
+#flipbook .page {
+    background-color: white!important;
+}
