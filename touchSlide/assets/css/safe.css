@@ -385,15 +385,15 @@ body {
 }
 
 .effect1-1.on {
-    -webkit-transition-delay: 1s;
+    -webkit-transition-delay: .3s;
 }
 
 .effect1-2.on {
-    -webkit-transition-delay: 1.5s;
+    -webkit-transition-delay: 1s;
 }
 
 .effect1-3.on {
-    -webkit-transition-delay: 2s;
+    -webkit-transition-delay: 1.5s;
 }
 
 .effect1.off {
@@ -406,7 +406,7 @@ body {
 
 .effect2 {
     opacity: 0;
-    -webkit-transition: all ease .7s 1.5s;
+    -webkit-transition: all ease .5s 1.5s;
 }
 
 .effect2-1 {
@@ -423,11 +423,11 @@ body {
 }
 
 .effect2-1.on {
-    -webkit-transition-delay: 1s;
+    -webkit-transition-delay: 0s;
 }
 
 .effect2-2.on {
-    -webkit-transition-delay: 2s;
+    -webkit-transition-delay: .8s;
 }
 
 .effect2-1.off {
