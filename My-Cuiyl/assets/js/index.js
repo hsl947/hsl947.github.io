@@ -1,35 +1,13 @@
 'use strict';
 var init = function init() {
     //瀑布流图片代码
-    var img_src = [{
-        src: "assets/images/1.jpg"
-    }, {
-            src: "assets/images/2.jpg"
-        }, {
-            src: "assets/images/3.jpg"
-        }, {
-            src: "assets/images/4.jpg"
-        }, {
-            src: "assets/images/5.jpg"
-        }, {
-            src: "assets/images/6.jpg"
-        }, {
-            src: "assets/images/7.jpg"
-        }, {
-            src: "assets/images/8.jpg"
-        }, {
-            src: "assets/images/9.jpg"
-        }, {
-            src: "assets/images/10.jpg"
-        }, {
-            src: "assets/images/11.jpg"
-        }, {
-            src: "assets/images/12.jpg"
-        }, {
-            src: "assets/images/13.jpg"
-        }, {
-            src: "assets/images/14.jpg"
-        }];
+    var img_src = [];
+    var img_item = {};
+    for (let j = 1; j < 46; j++) {
+        var img_item = {};
+        img_item['src'] = `assets/images/${j}.jpg`;
+        img_src.push(img_item);
+    }
     var i = 0,
         sum;
     //瀑布流加载图片
@@ -60,8 +38,8 @@ var init = function init() {
         //把div放入大盒子
         $(".grid").append(oA);
         $(".grid").append(oScript);
-        (function (oImg) {
-            setTimeout(function () {
+        (function(oImg) {
+            setTimeout(function() {
                 oImg.style.cssText = "opacity:1;transform:scale(1);";
             }, 500);
         })(oImg); //立马调用
@@ -71,7 +49,7 @@ var init = function init() {
     var scrollH = ''; //文档高度
     var scrollT = ''; //滚动条高度
     var _height = $(window).height();
-    $(window).scroll(function () {
+    $(window).scroll(function() {
         scrollH = document.body.scrollHeight;
         scrollT = document.documentElement.scrollTop || window.pageYOffset || document.body.scrollTop;
         if (_height + scrollT + 50 > scrollH) {
@@ -81,27 +59,27 @@ var init = function init() {
     });
 
     load();
-    setTimeout(function () {
+    setTimeout(function() {
         minigrid('.grid', '.grid-item', 6, null,
-            function () {
+            function() {
                 var d = document.querySelector('.demo');
                 d.style.opacity = 1;
             }
         );
     }, 500);
 
-    window.addEventListener('resize', function () {
+    window.addEventListener('resize', function() {
         minigrid('.grid', '.grid-item');
     });
 }
 
 
 // iPad and iPod detection	
-var isiPad = function () {
+var isiPad = function() {
     return (navigator.platform.indexOf("iPad") != -1);
 };
 
-var isiPhone = function () {
+var isiPhone = function() {
     return (
         (navigator.platform.indexOf("iPhone") != -1) ||
         (navigator.platform.indexOf("iPod") != -1)
@@ -109,15 +87,15 @@ var isiPhone = function () {
 };
 
 // OffCanvass
-var offCanvass = function () {
-    $('body').on('click', '.js-fh5co-menu-btn, .js-fh5co-offcanvass-close', function () {
+var offCanvass = function() {
+    $('body').on('click', '.js-fh5co-menu-btn, .js-fh5co-offcanvass-close', function() {
         $('#fh5co-offcanvass').toggleClass('fh5co-awake');
     });
 };
 
 // Click outside of offcanvass
-var mobileMenuOutsideClick = function () {
-    $(document).click(function (e) {
+var mobileMenuOutsideClick = function() {
+    $(document).click(function(e) {
         var container = $("#fh5co-offcanvass, .js-fh5co-menu-btn");
         if (!container.is(e.target) && container.has(e.target).length === 0) {
             if ($('#fh5co-offcanvass').hasClass('fh5co-awake')) {
@@ -126,7 +104,7 @@ var mobileMenuOutsideClick = function () {
         }
     });
 
-    $(window).scroll(function () {
+    $(window).scroll(function() {
         if ($(window).scrollTop() > 500) {
             if ($('#fh5co-offcanvass').hasClass('fh5co-awake')) {
                 $('#fh5co-offcanvass').removeClass('fh5co-awake');
@@ -137,7 +115,7 @@ var mobileMenuOutsideClick = function () {
 
 // Magnific Popup
 
-var magnifPopup = function () {
+var magnifPopup = function() {
     $('.image-popup').magnificPopup({
         type: 'image',
         removalDelay: 300,
@@ -155,7 +133,7 @@ var magnifPopup = function () {
             // The "opener" function should return the element from which popup will be zoomed in
             // and to which popup will be scaled down
             // By defailt it looks for an image tag:
-            opener: function (openerElement) {
+            opener: function(openerElement) {
                 // openerElement is the element on which popup was initialized, in this case its <a> tag
                 // you don't need to add "opener" option if this code matches your needs, it's defailt one.
                 return openerElement.is('img') ? openerElement : openerElement.find('img');
@@ -163,7 +141,7 @@ var magnifPopup = function () {
         }
     });
 };
-$(function () {
+$(function() {
     isiPhone();
     isiPad();
     init();
