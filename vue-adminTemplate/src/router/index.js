@@ -72,7 +72,29 @@ export const constantRouterMap = [
     ]
   },
 
-  { path: '*', redirect: '/404', hidden: true }
+  { path: '*', redirect: '/404', hidden: true },
+
+  {
+    path: '/business',
+    component: Layout,
+    redirect: '/business/demo',
+    name: 'Business',
+    meta: { title: '业务', icon: 'money' },
+    children: [
+      {
+        path: 'deom1',
+        name: 'deom1',
+        component: () => import('@/views/business/demo'),
+        meta: { title: '进件管理' },
+      },
+      {
+        path: 'deom2',
+        name: 'deom2',
+        component: () => import('@/views/business/demo'),
+        meta: { title: '审核管理' }
+      }
+    ]
+  }
 ]
 
 export default new Router({
