@@ -49,7 +49,7 @@
 
 # 开源项目和作品
 
- - [我的博客](https://www.hongshaoli.com) : node.js+express+mongodb+vue搭建的个人博客，待完善。
+ - [我的博客](https://github.com/hsl947/vue-home) : node.js+express+mongodb+vue搭建的个人博客，待完善。
  - [小程序](#) : 微信小程序搜索 “我和翠翠的相册”，使用小程序云开发进行数据存储。
  ---
 
