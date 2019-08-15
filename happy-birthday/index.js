@@ -26,7 +26,7 @@ var S = {
     } else {
       setTimeout(function(){
         // 景婷美女早日找到如意郎君
-        S.UI.simulate('|#countdown 3|Go~|祝|景婷|美女|早日|找到|如意郎君|OVER~||');
+        S.UI.simulate('|#countdown 3|Go~|青晶|美女|生日|快乐|漂亮|辣妈|OVER~||');
       },1000);
     }
 
