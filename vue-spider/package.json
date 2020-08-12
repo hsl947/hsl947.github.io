@@ -1,0 +1,17 @@
+{
+    "name": "node-spider",
+    "version": "1.0.0",
+    "description": "node spider",
+    "main": "spider.js",
+    "scripts": {
+        "test": "node spider.js"
+    },
+    "keywords": [
+        "node"
+    ],
+    "author": "shaoli",
+    "license": "ISC",
+    "dependencies": {
+        "crawler": "^0.4.3"
+    }
+}

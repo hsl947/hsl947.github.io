@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>HTML5调用电脑摄像头实例</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+    <meta content="black-translucent" name="apple-mobile-web-app-status-bar-style">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta content="telephone=no" name="format-detection">
+    <meta name="apple-touch-fullscreen" content="yes">
+    <meta name="full-screen" content="yes">
+    <meta name="x5-page-mode" content="app">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script type="text/javascript">   
+        window.addEventListener("DOMContentLoaded", function() {  
+            // Grab elements, create settings, etc.  
+            var canvas = document.getElementById("canvas"),  
+                context = canvas.getContext("2d"),  
+                video = document.getElementById("video"),  
+                videoObj = { "video": true },  
+                errBack = function(error) {  
+                    console.log("Video capture error: ", error.code);   
+                };  
+           
+            // Put video listeners into place  
+            if(navigator.getUserMedia) { // Standard  
+                //alert("支持navigator.getUserMedia");
+                navigator.getUserMedia(videoObj, function(stream) {  
+                    video.src = stream;  
+                    video.play();  
+                }, errBack);  
+            } else if(navigator.webkitGetUserMedia) { // WebKit-prefixed  
+                //alert("支持navigator.webkitGetUserMedia");
+                navigator.webkitGetUserMedia(videoObj, function(stream){  
+                    video.src = window.webkitURL.createObjectURL(stream);  
+                    video.play();  
+                }, errBack);  
+            }  
+            else if(navigator.mozGetUserMedia) { // Firefox-prefixed  
+                //alert("支持navigator.mozGetUserMedia");
+                navigator.mozGetUserMedia(videoObj, function(stream){  
+                    video.src = window.URL.createObjectURL(stream);  
+                    video.play();  
+                }, errBack);  
+            }  
+            // 触发拍照动作  
+            document.getElementById("snap").addEventListener("click", function() {  
+                context.drawImage(video, 0, 0, 640, 480);  
+            }); 
+ 
+        }, false);   
+        
+        
+        
+        window.onload = function () {
+           var canvas = document.getElementsByTagName('canvas')[0],
+               context = canvas.getContext('2d'),
+               video = document.getElementsByTagName("video")[0],
+               snap = document.getElementById("snap"),
+               close = document.getElementById("close"),
+               start = document.getElementById("start"),
+               MediaStreamTrack;
+           start.addEventListener('click', function () {
+               if (navigator.mediaDevices && navigator.mediaDevices.getUserMedia) {
+                   navigator.mediaDevices.getUserMedia({
+                       video: true,
+                       audio: true
+                   }).then(function (stream) {
+                       console.log(stream);
+                       MediaStreamTrack=typeof stream.stop==='function'?stream:stream.getTracks()[1];
+                       video.src=(window.URL).createObjectURL(stream);
+                       video.play();
+                   }).catch(function(err){
+                       console.log(err);
+                   });
+               }else if(navigator.getMedia){
+                   navigator.getMedia({
+                       video: true
+                   }).then(function (stream) {
+                       console.log(stream);
+                       MediaStreamTrack=stream.getTracks()[1];
+                       video.src=(window.webkitURL).createObjectURL(stream);
+                       video.play();
+                   }).catch(function(err){
+                       console.log(err);
+                   });
+               }
+           });
+           snap.addEventListener('click', function () {
+               context.drawImage(video, 0, 0,200,150);
+           });
+           close.addEventListener('click', function () {
+               MediaStreamTrack && MediaStreamTrack.stop();
+           });
+       }
+    </script>
+</head>
+<body>
+    <video id="video" width="640" height="480" autoplay></video><br>
+    <button id="snap" >点击拍照</button>  <br>
+    <canvas id="canvas" width="640" height="480"></canvas>  
+    
+    
+    
+     <video width="200px" height="150px"></video>
+      <canvas width="200px" height="150px"></canvas>
+      <p>
+          <button id="start">打开摄像头</button>
+          <button id="snap">截取图像</button>
+          <button id="close">关闭摄像头</button>
+      </p>
+</body>
+</html>
