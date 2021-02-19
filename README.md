@@ -16,7 +16,7 @@
 # 联系方式
 
 - Phone：15980763390
-- Email：[hongshaoli@foxmail.com](hongshaoli@foxmail.com)
+- Email：[hongshaoli@foxmail.com](mailto:hongshaoli@foxmail.com)
 - Wechat：15980763390
 - QQ：582631730
 
