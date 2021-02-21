@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>双向数据绑定 demo</title>
+</head>
+<body>
+  <textarea id="input"></textarea>
+
+  <p id="show"></p>
+  <script>
+    // 使用 defineProperty 实现
+    function useDefineProperty() {
+      const obj = {}
+      const input = document.querySelector('#input')
+      const show = document.querySelector('#show')
+
+      Object.defineProperty(obj, 'name', {
+        get: () => input.value,
+        set: (val) => {
+          show.textContent = val
+        }
+      })
+      input.oninput = function (e) {
+        obj.name = e.target.value
+      }
+    }
+
+    // 使用 Proxy 实现
+    function useProxy() {
+      const input = document.querySelector('#input')
+      const show = document.querySelector('#show')
+
+      const obj = new Proxy({}, {
+        get: () => input.value,
+        set: (object, key, value) => {
+          show.textContent = value
+        }
+      })
+
+      input.oninput = function (e) {
+        obj.name = e.target.value
+      }
+    }
+
+    // useDefineProperty()
+    useProxy()
+  </script>
+</body>
+</html>
