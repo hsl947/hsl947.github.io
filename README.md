@@ -67,7 +67,7 @@
 > - 熟练掌握 Vue 和 React，及其相关类库/插件的使用
 > - 熟练掌握并使用 Nuxt 和 Next 等服务端渲染框架
 > - 熟练掌握并使用 Uni-app 或 Taro 进行跨多端开发
-> - 熟悉 TypeScript，并整合到实际项目中使用
+> - 掌握 TypeScript，并整合到实际项目中使用
 > - 掌握 CI 部署和 Docker + Jenkins 部署流程
 > - 熟练 Linux 常用操作命令，熟悉 Nginx 常用配置及优化
 > - 熟悉 Node.js + Express + Mongodb  的全栈开发模式
