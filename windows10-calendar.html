@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>windows10 calendar border effect</title>
+
+    <style>
+      * {
+        box-sizing: border-box;
+      }
+
+      html,
+      body {
+        height: 100%;
+        margin: 0;
+        background: #066dda;
+        font-family: system;
+      }
+
+      body {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .calendar {
+        padding: 20px;
+        position: relative;
+        overflow: hidden;
+        background: #000000aa;
+      }
+
+      .calendar-header {
+        color: white;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        padding: 10px 0;
+        position: relative;
+        z-index: 1;
+      }
+
+      .calendar-body {
+        width: 380px;
+        height: 240px;
+        position: relative;
+      }
+
+      .grid-container {
+        width: 100%;
+        height: 100%;
+        display: grid;
+        grid-template-columns: repeat(7, 1fr);
+        grid-template-rows: repeat(5, 1fr);
+      }
+
+      .grid-item {
+        margin: 2px;
+      }
+
+      .border-layer {
+        position: absolute;
+        pointer-events: none;
+        visibility: hidden;
+        -webkit-mask-image: radial-gradient(
+          circle at center,
+          white 0%,
+          transparent 80px
+        );
+        -webkit-mask-repeat: no-repeat;
+        -webkit-mask-size: 160px 160px;
+      }
+
+      .calendar:hover .border-layer {
+        visibility: visible;
+      }
+
+      .border-layer .grid-item {
+        border: 2px solid #ffffff66;
+      }
+
+      .number-layer .grid-item {
+        color: white;
+        font-size: 14px;
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+      }
+
+      .number-layer .grid-item:hover {
+        border: 2px solid #ffffff66;
+      }
+
+      .number-layer .grid-item span:last-child {
+        font-size: 12px;
+      }
+    </style>
+
+  </head>
+
+  <body translate="no">
+    <div class="calendar">
+      <div class="calendar-header">
+        <div class="week-day">一</div>
+        <div class="week-day">二</div>
+        <div class="week-day">三</div>
+        <div class="week-day">四</div>
+        <div class="week-day">五</div>
+        <div class="week-day">六</div>
+        <div class="week-day">日</div>
+      </div>
+      <div class="calendar-body">
+        <div
+          class="grid-container border-layer"
+          style="-webkit-mask-position: 316px 17px"
+        >
+          <div class="grid-item"></div>
+          <div class="grid-item"></div>
+          <div class="grid-item"></div>
+          <div class="grid-item"></div>
+          <div class="grid-item"></div>
+          <div class="grid-item"></div>
+          <div class="grid-item"></div>
+          <div class="grid-item"></div>
+          <div class="grid-item"></div>
+          <div class="grid-item"></div>
+          <div class="grid-item"></div>
+          <div class="grid-item"></div>
+          <div class="grid-item"></div>
+          <div class="grid-item"></div>
+          <div class="grid-item"></div>
+          <div class="grid-item"></div>
+          <div class="grid-item"></div>
+          <div class="grid-item"></div>
+          <div class="grid-item"></div>
+          <div class="grid-item"></div>
+          <div class="grid-item"></div>
+          <div class="grid-item"></div>
+          <div class="grid-item"></div>
+          <div class="grid-item"></div>
+          <div class="grid-item"></div>
+          <div class="grid-item"></div>
+          <div class="grid-item"></div>
+          <div class="grid-item"></div>
+          <div class="grid-item"></div>
+          <div class="grid-item"></div>
+          <div class="grid-item"></div>
+          <div class="grid-item"></div>
+          <div class="grid-item"></div>
+          <div class="grid-item"></div>
+          <div class="grid-item"></div>
+        </div>
+        <div class="grid-container number-layer">
+          <div class="grid-item"><span>28</span><span>十四</span></div>
+          <div class="grid-item"><span>29</span><span>十五</span></div>
+          <div class="grid-item"><span>30</span><span>十六</span></div>
+          <div class="grid-item"><span>1</span><span>十七</span></div>
+          <div class="grid-item"><span>2</span><span>十八</span></div>
+          <div class="grid-item"><span>3</span><span>十九</span></div>
+          <div class="grid-item"><span>4</span><span>廿十</span></div>
+          <div class="grid-item"><span>5</span><span>廿一</span></div>
+          <div class="grid-item"><span>6</span><span>廿二</span></div>
+          <div class="grid-item"><span>7</span><span>廿三</span></div>
+          <div class="grid-item"><span>8</span><span>廿四</span></div>
+          <div class="grid-item"><span>9</span><span>廿五</span></div>
+          <div class="grid-item"><span>10</span><span>廿六</span></div>
+          <div class="grid-item"><span>11</span><span>廿七</span></div>
+          <div class="grid-item"><span>12</span><span>廿八</span></div>
+          <div class="grid-item"><span>13</span><span>廿九</span></div>
+          <div class="grid-item"><span>14</span><span>初一</span></div>
+          <div class="grid-item"><span>15</span><span>初二</span></div>
+          <div class="grid-item"><span>16</span><span>初三</span></div>
+          <div class="grid-item"><span>17</span><span>初四</span></div>
+          <div class="grid-item"><span>18</span><span>初五</span></div>
+          <div class="grid-item"><span>19</span><span>初六</span></div>
+          <div class="grid-item"><span>20</span><span>初七</span></div>
+          <div class="grid-item"><span>21</span><span>初八</span></div>
+          <div class="grid-item"><span>22</span><span>初九</span></div>
+          <div class="grid-item"><span>23</span><span>初十</span></div>
+          <div class="grid-item"><span>24</span><span>十一</span></div>
+          <div class="grid-item"><span>25</span><span>十二</span></div>
+          <div class="grid-item"><span>26</span><span>十三</span></div>
+          <div class="grid-item"><span>27</span><span>十四</span></div>
+          <div class="grid-item"><span>28</span><span>十五</span></div>
+          <div class="grid-item"><span>29</span><span>十六</span></div>
+          <div class="grid-item"><span>30</span><span>十七</span></div>
+          <div class="grid-item"><span>1</span><span>十八</span></div>
+          <div class="grid-item"><span>2</span><span>十九</span></div>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      var borderLayer = document.querySelector(".border-layer");
+      document
+        .querySelector(".calendar")
+        .addEventListener("mousemove", function (ev) {
+          var x = ev.pageX;
+          var y = ev.pageY;
+          var bounding = borderLayer.getBoundingClientRect();
+
+          borderLayer.style.webkitMaskPosition = `${x - bounding.x - 80}px ${
+            y - bounding.y - 80
+          }px`;
+        });
+    </script>
+  </body>
+</html>
