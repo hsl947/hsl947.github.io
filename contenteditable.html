@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .e{
+      width: 1000px;
+      height: 600px;
+      border: solid;
+      margin: auto;
+    }
+  </style>
+</head>
+<body>
+  <button onclick="addSub()">添加下标</button>
+  <div class="e" contenteditable oninput="edit(this)"></div>
+  <script>
+    function edit(e) {
+      console.log('index, $event: ', e.innerHTML);
+    }
+
+    function addSub() {
+      const obj = window.getSelection()
+      const val  = obj.anchorNode.data
+      const s = obj.anchorOffset
+      const e = obj.focusOffset
+
+      if (obj.getRangeAt && obj.rangeCount) {
+        const node = document.createElement('sub')
+        node.innerHTML = val.substring(s, e)
+        range = obj.getRangeAt(0);
+        range.deleteContents();
+        range.insertNode(node)
+      }
+    }
+  </script>
+</body>
+</html>
