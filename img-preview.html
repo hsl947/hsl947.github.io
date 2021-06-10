@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>仿掘金 - 图片预览</title>
+</head>
+<style>
+  img{
+    display: block;
+    cursor: zoom-in;
+    border: dashed;
+    margin: 10px;
+    transform: translate3d(0,0,0) scale(1);
+    transition: all .3s;
+    position: relative;
+    z-index: 1;
+    will-change: transform;
+    width: 700px;
+  }
+  img.zoom-in{
+    cursor: zoom-out;
+    z-index: 3;
+  }
+
+  #mask{
+    opacity: 0;
+  }
+  #mask.show{
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(1,1,1,.6);
+    z-index: 2;
+    cursor: zoom-out;
+    will-change: opacity;
+    transition: all .2s ease-out .2s;
+    opacity: 1;
+  }
+</style>
+<body>
+  <img id="1" src="https://img-hello-world.oss-cn-beijing.aliyuncs.com/abec0f5ecf3cb81a671496dec3e143e7.jpeg" alt="">
+  <img id="2" src="https://img-hello-world.oss-cn-beijing.aliyuncs.com/c15df795fa1da18a8bd473783b397f63.png" alt="">
+  <img id="3" src="https://img-hello-world.oss-cn-beijing.aliyuncs.com/89acaba706ddadff3ee862c126c05de9.jpeg" alt="">
+  <img id="4" src="https://img-hello-world.oss-cn-beijing.aliyuncs.com/c8e29e0ff92e3a257b05392adb00cce9.png" alt="">
+  <img id="5" src="https://p6-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/67924f339c9642dc959489cb191acc4c~tplv-k3u1fbpfcp-watermark.image" alt="">
+
+  <div id="mask" />
+  <script>
+    let previewImg = null
+    let isScroll = false
+    const imgs = Array.from(document.querySelectorAll('img'))
+    const mask = document.querySelector('#mask')
+
+    // 显示蒙层和预览
+    function showMask() {
+      // 图片的宽高
+      const width = previewImg.width
+      const height = previewImg.height
+
+      // 可视窗口的宽高
+      const { innerWidth, innerHeight } = window
+
+      // 计算缩放比，取小值
+      const scaleRateX = innerWidth / width
+      const scaleRateY = innerHeight / height
+      const scaleRate = Math.min(scaleRateX, scaleRateY)
+
+      // 图片在窗口内的坐标
+      const imgPosX = previewImg.offsetLeft
+      const imgPosY = previewImg.offsetTop
+
+      // 窗口当前可视区域的坐标
+      const windowPosX = window.scrollX
+      const windowPosY = window.scrollY
+
+      // 计算偏移量
+      const diffX = windowPosX - imgPosX + (innerWidth / 2) - (width / 2)
+      const diffY = windowPosY - imgPosY + (innerHeight / 2) - (height / 2)
+
+      previewImg.style.transform = `translate3d(${diffX}px,${diffY}px,0) scale(${scaleRate})`
+      if(!isScroll) {
+        previewImg.classList.add("zoom-in");
+        mask.classList.add("show");
+        document.body.classList.add("zoom-in");
+      }
+    }
+
+    // 关闭蒙层和预览
+    function closeMask() {
+      previewImg.style.transform = `translate3d(0, 0, 0) scale(1)`
+      previewImg.classList.remove("zoom-in");
+      mask.classList.remove("show");
+      document.body.classList.remove("zoom-in");
+      previewImg = null
+    }
+
+    imgs.forEach((img)=>{
+      img.onclick = function() {
+        isScroll = false
+        previewImg = this
+        const classes = [...this.classList]
+        if(classes.includes('zoom-in')) {
+          closeMask()
+          return
+        }
+        showMask()
+      }
+    })
+
+    // 点击蒙层
+    mask.onclick = function() {
+      closeMask(previewImg)
+    }
+
+    window.onscroll = function() {
+      if(previewImg) {
+        isScroll = true
+        showMask()
+      }
+    }
+
+    window.onresize = function() {
+      if(previewImg) {
+        isScroll = true
+        showMask()
+      }
+    }
+
+    // 准备做滚轮图片缩放
+    window.onmousewheel  = function() {}
+
+  </script>
+</body>
+</html>
