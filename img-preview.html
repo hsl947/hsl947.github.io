@@ -11,6 +11,9 @@
     margin: 0;
     padding: 0;
   }
+  body.zoom-in{
+    overflow: hidden;
+  }
 
   img{
     display: block;
@@ -42,7 +45,7 @@
     z-index: 2;
     cursor: zoom-out;
     will-change: opacity;
-    transition: all .2s ease-out .2s;
+    transition: all .2s ease-out .1s;
     opacity: 1;
   }
 
@@ -60,11 +63,26 @@
   <img id="5" src="https://p6-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/67924f339c9642dc959489cb191acc4c~tplv-k3u1fbpfcp-watermark.image" alt="">
 
   <div id="mask" />
+
   <script>
+    // 预览的图片dom
     let previewImg = null
-    let isScroll = false
+    // 窗口是否在缩放
+    let isResize = false
+    // 图片是否在缩放
+    let isScale = false
+    // 最小的图片缩放比
+    const minScale = 0.1
+    // 所有的图片
     const imgs = Array.from(document.querySelectorAll('img'))
+    // 遮罩层
     const mask = document.querySelector('#mask')
+    // 记录偏移量和缩放比
+    const diffs = {
+      x: 0,
+      y: 0,
+      scale: 1
+    }
 
     // 显示蒙层和预览
     function showMask() {
@@ -92,8 +110,14 @@
       const diffX = windowPosX - imgPosX + (innerWidth / 2) - (width / 2)
       const diffY = windowPosY - imgPosY + (innerHeight / 2) - (height / 2)
 
-      previewImg.style.transform = `translate3d(${diffX}px,${diffY}px,0) scale(${scaleRate})`
-      if(!isScroll) {
+      Object.assign(diffs, {
+        x: diffX,
+        y: diffY,
+        scale: isScale ? diffs.scale : scaleRate
+      })
+
+      previewImg.style.transform = `translate3d(${diffs.x}px,${diffs.y}px,0) scale(${diffs.scale})`
+      if(!isResize) {
         previewImg.classList.add("zoom-in");
         mask.classList.add("show");
         document.body.classList.add("zoom-in");
@@ -107,11 +131,16 @@
       mask.classList.remove("show");
       document.body.classList.remove("zoom-in");
       previewImg = null
+      Object.assign(diffs, {
+        x: 0,
+        y: 0,
+        scale: 1
+      })
     }
 
     imgs.forEach((img)=>{
       img.onclick = function() {
-        isScroll = false
+        isResize = false
         previewImg = this
         const classes = [...this.classList]
         if(classes.includes('zoom-in')) {
@@ -127,22 +156,32 @@
       closeMask(previewImg)
     }
 
-    window.onscroll = function() {
-      if(previewImg) {
-        isScroll = true
-        showMask()
-      }
-    }
-
+    // 窗口缩放事件
     window.onresize = function() {
       if(previewImg) {
-        isScroll = true
+        isResize = true
         showMask()
       }
     }
 
     // 准备做滚轮图片缩放
-    window.onmousewheel  = function() {}
+    window.onmousewheel  = function(e) {
+      const { deltaY, offsetX, offsetY, target } = e
+
+      // 缩放到最小、滚轮在蒙层上、没有预览时，都不执行
+      if((diffs.scale <= minScale && deltaY > 0) || target.id === 'mask' || !previewImg) return
+
+      // 更改图片缩放的原点
+      previewImg.style['transform-origin'] = `${offsetX}px ${offsetY}px`
+
+      isScale = true
+      //动态设置图片缩放大小
+      const scaleType = deltaY > 0 ? -1 : 1
+      diffs.scale = diffs.scale + scaleType * minScale
+      diffs.scale = Math.max(diffs.scale, minScale)
+
+      showMask()
+    }
 
   </script>
 </body>
