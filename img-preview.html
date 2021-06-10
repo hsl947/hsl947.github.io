@@ -7,11 +7,16 @@
   <title>仿掘金 - 图片预览</title>
 </head>
 <style>
+  body{
+    margin: 0;
+    padding: 0;
+  }
+
   img{
     display: block;
     cursor: zoom-in;
     border: dashed;
-    margin: 10px;
+    margin: 20px 0;
     transform: translate3d(0,0,0) scale(1);
     transition: all .3s;
     position: relative;
@@ -39,6 +44,12 @@
     will-change: opacity;
     transition: all .2s ease-out .2s;
     opacity: 1;
+  }
+
+  @media screen and (max-width: 980px) {
+    img{
+      width: 100%;
+    }
   }
 </style>
 <body>
