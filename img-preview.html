@@ -18,14 +18,13 @@
   img{
     display: block;
     cursor: zoom-in;
-    border: dashed;
-    margin: 20px 0;
-    transform: translate3d(0,0,0) scale(1);
-    transition: all .3s;
+    border: dashed rgb(250, 117, 117) 2px;
+    transform: translate3d(0, 0, 0) scale(1);
+    transition: transform 0.3s;
+    will-change: transform;
     position: relative;
     z-index: 1;
-    will-change: transform;
-    width: 700px;
+    width: 400px;
   }
   img.zoom-in{
     cursor: zoom-out;
@@ -45,7 +44,7 @@
     z-index: 2;
     cursor: zoom-out;
     will-change: opacity;
-    transition: all .2s ease-out .1s;
+    transition: opacity 0.2s ease-out 0.1s;
     opacity: 1;
   }
 
@@ -69,33 +68,30 @@
     let previewImg = null
     // 窗口是否在缩放
     let isResize = false
-    // 图片是否在缩放
-    let isScale = false
-    // 最小的图片缩放比
-    const minScale = 0.1
     // 所有的图片
     const imgs = Array.from(document.querySelectorAll('img'))
     // 遮罩层
     const mask = document.querySelector('#mask')
-    // 记录偏移量和缩放比
-    const diffs = {
-      x: 0,
-      y: 0,
-      scale: 1
-    }
 
     // 显示蒙层和预览
     function showMask() {
       // 图片的宽高
-      const width = previewImg.width
-      const height = previewImg.height
+      const { width, height, naturalWidth, naturalHeight } = previewImg
 
       // 可视窗口的宽高
       const { innerWidth, innerHeight } = window
 
+      // 判断图片原始尺寸是否大于窗口尺寸
+      const calcWidth = naturalWidth
+        ? Math.min(naturalWidth, innerWidth)
+        : width
+      const calcHeight = naturalHeight
+        ? Math.min(naturalHeight, innerHeight)
+        : height
+
       // 计算缩放比，取小值
-      const scaleRateX = innerWidth / width
-      const scaleRateY = innerHeight / height
+      const scaleRateX = calcWidth / width
+      const scaleRateY = calcHeight / height
       const scaleRate = Math.min(scaleRateX, scaleRateY)
 
       // 图片在窗口内的坐标
@@ -107,20 +103,14 @@
       const windowPosY = window.scrollY
 
       // 计算偏移量
-      const diffX = windowPosX - imgPosX + (innerWidth / 2) - (width / 2)
-      const diffY = windowPosY - imgPosY + (innerHeight / 2) - (height / 2)
+      const diffX = windowPosX - imgPosX + innerWidth / 2 - width / 2
+      const diffY = windowPosY - imgPosY + innerHeight / 2 - height / 2
 
-      Object.assign(diffs, {
-        x: diffX,
-        y: diffY,
-        scale: isScale ? diffs.scale : scaleRate
-      })
-
-      previewImg.style.transform = `translate3d(${diffs.x}px,${diffs.y}px,0) scale(${diffs.scale})`
-      if(!isResize) {
-        previewImg.classList.add("zoom-in");
-        mask.classList.add("show");
-        document.body.classList.add("zoom-in");
+      previewImg.style.transform = `translate3d(${diffX}px,${diffY}px,0) scale(${scaleRate})`
+      if (!isResize) {
+        previewImg.classList.add('zoom-in')
+        mask.classList.add('show')
+        // document.body.classList.add('zoom-in')
       }
     }
 
@@ -129,13 +119,8 @@
       previewImg.style.transform = `translate3d(0, 0, 0) scale(1)`
       previewImg.classList.remove("zoom-in");
       mask.classList.remove("show");
-      document.body.classList.remove("zoom-in");
+      // document.body.classList.remove("zoom-in");
       previewImg = null
-      Object.assign(diffs, {
-        x: 0,
-        y: 0,
-        scale: 1
-      })
     }
 
     imgs.forEach((img)=>{
@@ -157,32 +142,19 @@
     }
 
     // 窗口缩放事件
+    window.onscroll = function() {
+      if(previewImg) {
+        isResize = true
+        showMask()
+      }
+    }
+    // 窗口缩放事件
     window.onresize = function() {
       if(previewImg) {
         isResize = true
         showMask()
       }
     }
-
-    // 准备做滚轮图片缩放
-    window.onmousewheel  = function(e) {
-      const { deltaY, offsetX, offsetY, target } = e
-
-      // 缩放到最小、滚轮在蒙层上、没有预览时，都不执行
-      if((diffs.scale <= minScale && deltaY > 0) || target.id === 'mask' || !previewImg) return
-
-      // 更改图片缩放的原点
-      previewImg.style['transform-origin'] = `${offsetX}px ${offsetY}px`
-
-      isScale = true
-      //动态设置图片缩放大小
-      const scaleType = deltaY > 0 ? -1 : 1
-      diffs.scale = diffs.scale + scaleType * minScale
-      diffs.scale = Math.max(diffs.scale, minScale)
-
-      showMask()
-    }
-
   </script>
 </body>
 </html>
